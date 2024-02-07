@@ -92,6 +92,17 @@ class VoucherController extends AbstractController
 
     }
 
+
+    /**
+     * @Route("/", name="app_voucher_search", methods={"GET", "POST"})
+     */
+    public function search(VoucherRepository $voucherRepository): Response
+    {
+        return $this->render('voucher/dashboard.html.twig', [
+            'vouchers' => $voucherRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/{id}", name="app_voucher_show", methods={"GET"})
      */

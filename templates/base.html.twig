@@ -40,7 +40,7 @@
 
         {% block search %}
         <div class="search-bar">
-            <form class="search-form d-flex align-items-center" method="POST" action="#" >
+            <form class="search-form d-flex align-items-center" method="POST" action="{{ path('app_voucher_search') }}" >
                 <input type="text" name="query" id="searchQuery" placeholder="Search" title="Enter search keyword">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
             </form>
