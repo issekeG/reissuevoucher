@@ -200,45 +200,73 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\reissuevoucher\RegistrationController" class="App\Controller\reissuevoucher\RegistrationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\RegistrationController"/>
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\reissuevoucher\RegistrationController"/>
       </call>
     </service>
-    <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\reissuevoucher\SecurityController" class="App\Controller\reissuevoucher\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\SecurityController"/>
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\reissuevoucher\SecurityController"/>
       </call>
     </service>
-    <service id="App\Controller\VoucherController" class="App\Controller\VoucherController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\reissuevoucher\VoucherController" class="App\Controller\reissuevoucher\VoucherController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\VoucherController"/>
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\reissuevoucher\VoucherController"/>
       </call>
     </service>
-    <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+    <service id="App\Controller\trainingvideos\CategoryController" class="App\Controller\trainingvideos\CategoryController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\trainingvideos\CategoryController"/>
+      </call>
+    </service>
+    <service id="App\Controller\trainingvideos\VideoController" class="App\Controller\trainingvideos\VideoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\trainingvideos\VideoController"/>
+      </call>
+    </service>
+    <service id="App\Form\reissuevoucher\RegistrationFormType" class="App\Form\reissuevoucher\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\VoucherType" class="App\Form\VoucherType" autowire="true" autoconfigure="true">
+    <service id="App\Form\reissuevoucher\VoucherType" class="App\Form\reissuevoucher\VoucherType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\VoucherTypeEdit" class="App\Form\VoucherTypeEdit" autowire="true" autoconfigure="true">
+    <service id="App\Form\reissuevoucher\VoucherTypeEdit" class="App\Form\reissuevoucher\VoucherTypeEdit" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+    <service id="App\Form\trainingvideos\CategoryType" class="App\Form\trainingvideos\CategoryType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\trainingvideos\VideoType" class="App\Form\trainingvideos\VideoType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\reissuevoucher\UserRepository" class="App\Repository\reissuevoucher\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\VoucherRepository" class="App\Repository\VoucherRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\reissuevoucher\VoucherRepository" class="App\Repository\reissuevoucher\VoucherRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Security\UserAuthentificatorAuthenticator" class="App\Security\UserAuthentificatorAuthenticator" autowire="true" autoconfigure="true">
+    <service id="App\Repository\trainingvideos\CategoryRepository" class="App\Repository\trainingvideos\CategoryRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\trainingvideos\VideoRepository" class="App\Repository\trainingvideos\VideoRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Security\reissuevoucher\UserAuthentificatorAuthenticator" class="App\Security\reissuevoucher\UserAuthentificatorAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
@@ -764,13 +792,16 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
-        <argument>App\Form</argument>
+        <argument>App\Form\reissuevoucher</argument>
+        <argument>App\Form\trainingvideos</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
-        <argument>App\Form\RegistrationFormType</argument>
-        <argument>App\Form\VoucherType</argument>
-        <argument>App\Form\VoucherTypeEdit</argument>
+        <argument>App\Form\reissuevoucher\RegistrationFormType</argument>
+        <argument>App\Form\reissuevoucher\VoucherType</argument>
+        <argument>App\Form\reissuevoucher\VoucherTypeEdit</argument>
+        <argument>App\Form\trainingvideos\CategoryType</argument>
+        <argument>App\Form\trainingvideos\VideoType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1997,7 +2028,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.J5OM7cB"/>
+      <argument type="service" id=".service_locator.VH9WX8l"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2500,7 +2531,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator._unNqCA"/>
+      <argument type="service" id=".service_locator.VT8Gtl0"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3767,7 +3798,7 @@
       <argument type="service" id=".service_locator.jlyTfzM"/>
       <argument type="collection">
         <argument key="main" type="collection">
-          <argument type="service" id="App\Security\UserAuthentificatorAuthenticator"/>
+          <argument type="service" id="App\Security\reissuevoucher\UserAuthentificatorAuthenticator"/>
         </argument>
       </argument>
       <argument>true</argument>
@@ -3780,7 +3811,7 @@
     </service>
     <service id="security.user.provider.concrete.app_user_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider">
       <argument type="service" id="doctrine"/>
-      <argument>App\Entity\User</argument>
+      <argument>App\Entity\reissuevoucher\VoucherUser</argument>
       <argument>email</argument>
       <argument>null</argument>
     </service>
@@ -3815,11 +3846,11 @@
       <argument>false</argument>
       <argument>security.user.provider.concrete.app_user_provider</argument>
       <argument>main</argument>
-      <argument>App\Security\UserAuthentificatorAuthenticator</argument>
+      <argument>App\Security\reissuevoucher\UserAuthentificatorAuthenticator</argument>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="collection">
-        <argument>App\Security\UserAuthentificatorAuthenticator</argument>
+        <argument>App\Security\reissuevoucher\UserAuthentificatorAuthenticator</argument>
       </argument>
       <argument>null</argument>
     </service>
@@ -3959,7 +3990,7 @@
     <service id="security.authenticator.manager.main" class="Symfony\Component\Security\Http\Authentication\AuthenticatorManager">
       <tag name="monolog.logger" channel="security"/>
       <argument type="collection">
-        <argument type="service" id="App\Security\UserAuthentificatorAuthenticator"/>
+        <argument type="service" id="App\Security\reissuevoucher\UserAuthentificatorAuthenticator"/>
       </argument>
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.event_dispatcher.main"/>
@@ -3982,7 +4013,7 @@
       <argument type="service" id="security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
-      <argument type="service" id="App\Security\UserAuthentificatorAuthenticator"/>
+      <argument type="service" id="App\Security\reissuevoucher\UserAuthentificatorAuthenticator"/>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="logger" on-invalid="null"/>
@@ -4036,25 +4067,39 @@
         <argument>Hash a user password</argument>
       </call>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VoucherController" class="App\Controller\VoucherController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VoucherController" class="App\Controller\VoucherController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\VoucherController" class="App\Controller\VoucherController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VoucherType" class="App\Form\VoucherType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\VoucherType" class="App\Form\VoucherType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VoucherTypeEdit" class="App\Form\VoucherTypeEdit" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\VoucherTypeEdit" class="App\Form\VoucherTypeEdit" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VoucherRepository" class="App\Repository\VoucherRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\VoucherRepository" class="App\Repository\VoucherRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\reissuevoucher\RegistrationController" class="App\Controller\reissuevoucher\RegistrationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\reissuevoucher\RegistrationController" class="App\Controller\reissuevoucher\RegistrationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\reissuevoucher\RegistrationController" class="App\Controller\reissuevoucher\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\reissuevoucher\SecurityController" class="App\Controller\reissuevoucher\SecurityController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\reissuevoucher\SecurityController" class="App\Controller\reissuevoucher\SecurityController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\reissuevoucher\SecurityController" class="App\Controller\reissuevoucher\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\reissuevoucher\VoucherController" class="App\Controller\reissuevoucher\VoucherController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\reissuevoucher\VoucherController" class="App\Controller\reissuevoucher\VoucherController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\reissuevoucher\VoucherController" class="App\Controller\reissuevoucher\VoucherController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\trainingvideos\CategoryController" class="App\Controller\trainingvideos\CategoryController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\trainingvideos\CategoryController" class="App\Controller\trainingvideos\CategoryController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\trainingvideos\CategoryController" class="App\Controller\trainingvideos\CategoryController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\trainingvideos\VideoController" class="App\Controller\trainingvideos\VideoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\trainingvideos\VideoController" class="App\Controller\trainingvideos\VideoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\trainingvideos\VideoController" class="App\Controller\trainingvideos\VideoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\reissuevoucher\RegistrationFormType" class="App\Form\reissuevoucher\RegistrationFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\reissuevoucher\RegistrationFormType" class="App\Form\reissuevoucher\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\reissuevoucher\VoucherType" class="App\Form\reissuevoucher\VoucherType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\reissuevoucher\VoucherType" class="App\Form\reissuevoucher\VoucherType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\reissuevoucher\VoucherTypeEdit" class="App\Form\reissuevoucher\VoucherTypeEdit" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\reissuevoucher\VoucherTypeEdit" class="App\Form\reissuevoucher\VoucherTypeEdit" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\trainingvideos\CategoryType" class="App\Form\trainingvideos\CategoryType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\trainingvideos\CategoryType" class="App\Form\trainingvideos\CategoryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\trainingvideos\VideoType" class="App\Form\trainingvideos\VideoType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\trainingvideos\VideoType" class="App\Form\trainingvideos\VideoType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\reissuevoucher\UserRepository" class="App\Repository\reissuevoucher\UserRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\reissuevoucher\UserRepository" class="App\Repository\reissuevoucher\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\reissuevoucher\VoucherRepository" class="App\Repository\reissuevoucher\VoucherRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\reissuevoucher\VoucherRepository" class="App\Repository\reissuevoucher\VoucherRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\trainingvideos\CategoryRepository" class="App\Repository\trainingvideos\CategoryRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\trainingvideos\CategoryRepository" class="App\Repository\trainingvideos\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\trainingvideos\VideoRepository" class="App\Repository\trainingvideos\VideoRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\trainingvideos\VideoRepository" class="App\Repository\trainingvideos\VideoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4390,66 +4435,145 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.ztv7FYg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qhJ5uJH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="voucherRepository" type="service_closure" id="App\Repository\VoucherRepository"/>
+        <argument key="voucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.RxoADQi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2PEbKYl" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="mailer" type="service_closure" id="mailer.mailer"/>
-        <argument key="voucherRepository" type="service_closure" id="App\Repository\VoucherRepository"/>
+        <argument key="voucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Tc3bGFc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Jqd_se5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="voucher" type="service_closure" id=".errored..service_locator.Tc3bGFc.App\Entity\Voucher"/>
+        <argument key="voucher" type="service_closure" id=".errored..service_locator.Jqd_se5.App\Entity\reissuevoucher\Voucher"/>
       </argument>
     </service>
-    <service id=".service_locator.jStmmMc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.5pAjOGf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="voucher" type="service_closure" id=".errored..service_locator.jStmmMc.App\Entity\Voucher"/>
-        <argument key="voucherRepository" type="service_closure" id="App\Repository\VoucherRepository"/>
+        <argument key="voucher" type="service_closure" id=".errored..service_locator.5pAjOGf.App\Entity\reissuevoucher\Voucher"/>
+        <argument key="voucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.eyfOthP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.fZ_fM5A" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="voucherRepository" type="service_closure" id="App\Repository\VoucherRepository"/>
+        <argument key="voucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.s.Qsbce" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ROI4CUb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.4u5os03"/>
-        <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
-        <argument key="App\Controller\VoucherController::delete" type="service_closure" id=".service_locator.jStmmMc"/>
-        <argument key="App\Controller\VoucherController::edit" type="service_closure" id=".service_locator.jStmmMc"/>
-        <argument key="App\Controller\VoucherController::index" type="service_closure" id=".service_locator.ztv7FYg"/>
-        <argument key="App\Controller\VoucherController::new" type="service_closure" id=".service_locator.RxoADQi"/>
-        <argument key="App\Controller\VoucherController::search" type="service_closure" id=".service_locator.ztv7FYg"/>
-        <argument key="App\Controller\VoucherController::show" type="service_closure" id=".service_locator.Tc3bGFc"/>
-        <argument key="App\Controller\VoucherController::showShoesByStatus" type="service_closure" id=".service_locator.ztv7FYg"/>
-        <argument key="App\Controller\VoucherController::updateStatus" type="service_closure" id=".service_locator.eyfOthP"/>
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\trainingvideos\CategoryRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.WA5zrpe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="category" type="service_closure" id=".errored..service_locator.WA5zrpe.App\Entity\trainingvideos\Category"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3uqpK_F" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="category" type="service_closure" id=".errored..service_locator.3uqpK_F.App\Entity\trainingvideos\Category"/>
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\trainingvideos\CategoryRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.pJUCJBw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\trainingvideos\CategoryRepository"/>
+        <argument key="videoRepository" type="service_closure" id="App\Repository\trainingvideos\VideoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator._TEH.LM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service_closure" id="App\Repository\trainingvideos\CategoryRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="videoRepository" type="service_closure" id="App\Repository\trainingvideos\VideoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.l2QwsaZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.egcZKKl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="video" type="service_closure" id=".errored..service_locator.egcZKKl.App\Entity\trainingvideos\Video"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qrnShc5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="video" type="service_closure" id=".errored..service_locator.qrnShc5.App\Entity\trainingvideos\Video"/>
+        <argument key="videoRepository" type="service_closure" id="App\Repository\trainingvideos\VideoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.eTh4acQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\reissuevoucher\RegistrationController::register" type="service_closure" id=".service_locator.4u5os03"/>
+        <argument key="App\Controller\reissuevoucher\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::delete" type="service_closure" id=".service_locator.5pAjOGf"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::edit" type="service_closure" id=".service_locator.5pAjOGf"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::index" type="service_closure" id=".service_locator.qhJ5uJH"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::new" type="service_closure" id=".service_locator.2PEbKYl"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::search" type="service_closure" id=".service_locator.qhJ5uJH"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::show" type="service_closure" id=".service_locator.Jqd_se5"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::showShoesByStatus" type="service_closure" id=".service_locator.qhJ5uJH"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::updateStatus" type="service_closure" id=".service_locator.fZ_fM5A"/>
+        <argument key="App\Controller\trainingvideos\CategoryController::delete" type="service_closure" id=".service_locator.3uqpK_F"/>
+        <argument key="App\Controller\trainingvideos\CategoryController::edit" type="service_closure" id=".service_locator.3uqpK_F"/>
+        <argument key="App\Controller\trainingvideos\CategoryController::index" type="service_closure" id=".service_locator.ROI4CUb"/>
+        <argument key="App\Controller\trainingvideos\CategoryController::new" type="service_closure" id=".service_locator.ROI4CUb"/>
+        <argument key="App\Controller\trainingvideos\CategoryController::show" type="service_closure" id=".service_locator.WA5zrpe"/>
+        <argument key="App\Controller\trainingvideos\VideoController::delete" type="service_closure" id=".service_locator.qrnShc5"/>
+        <argument key="App\Controller\trainingvideos\VideoController::edit" type="service_closure" id=".service_locator.qrnShc5"/>
+        <argument key="App\Controller\trainingvideos\VideoController::index" type="service_closure" id=".service_locator.pJUCJBw"/>
+        <argument key="App\Controller\trainingvideos\VideoController::new" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\trainingvideos\VideoController::search" type="service_closure" id=".service_locator.pJUCJBw"/>
+        <argument key="App\Controller\trainingvideos\VideoController::show" type="service_closure" id=".service_locator.egcZKKl"/>
+        <argument key="App\Controller\trainingvideos\VideoController::showShoesByStatus" type="service_closure" id=".service_locator._TEH.LM"/>
+        <argument key="App\Controller\trainingvideos\VideoController::updateStatus" type="service_closure" id=".service_locator._TEH.LM"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
-        <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.4u5os03"/>
-        <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
-        <argument key="App\Controller\VoucherController:delete" type="service_closure" id=".service_locator.jStmmMc"/>
-        <argument key="App\Controller\VoucherController:edit" type="service_closure" id=".service_locator.jStmmMc"/>
-        <argument key="App\Controller\VoucherController:index" type="service_closure" id=".service_locator.ztv7FYg"/>
-        <argument key="App\Controller\VoucherController:new" type="service_closure" id=".service_locator.RxoADQi"/>
-        <argument key="App\Controller\VoucherController:search" type="service_closure" id=".service_locator.ztv7FYg"/>
-        <argument key="App\Controller\VoucherController:show" type="service_closure" id=".service_locator.Tc3bGFc"/>
-        <argument key="App\Controller\VoucherController:showShoesByStatus" type="service_closure" id=".service_locator.ztv7FYg"/>
-        <argument key="App\Controller\VoucherController:updateStatus" type="service_closure" id=".service_locator.eyfOthP"/>
+        <argument key="App\Controller\reissuevoucher\RegistrationController:register" type="service_closure" id=".service_locator.4u5os03"/>
+        <argument key="App\Controller\reissuevoucher\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:delete" type="service_closure" id=".service_locator.5pAjOGf"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:edit" type="service_closure" id=".service_locator.5pAjOGf"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:index" type="service_closure" id=".service_locator.qhJ5uJH"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:new" type="service_closure" id=".service_locator.2PEbKYl"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:search" type="service_closure" id=".service_locator.qhJ5uJH"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:show" type="service_closure" id=".service_locator.Jqd_se5"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:showShoesByStatus" type="service_closure" id=".service_locator.qhJ5uJH"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:updateStatus" type="service_closure" id=".service_locator.fZ_fM5A"/>
+        <argument key="App\Controller\trainingvideos\CategoryController:delete" type="service_closure" id=".service_locator.3uqpK_F"/>
+        <argument key="App\Controller\trainingvideos\CategoryController:edit" type="service_closure" id=".service_locator.3uqpK_F"/>
+        <argument key="App\Controller\trainingvideos\CategoryController:index" type="service_closure" id=".service_locator.ROI4CUb"/>
+        <argument key="App\Controller\trainingvideos\CategoryController:new" type="service_closure" id=".service_locator.ROI4CUb"/>
+        <argument key="App\Controller\trainingvideos\CategoryController:show" type="service_closure" id=".service_locator.WA5zrpe"/>
+        <argument key="App\Controller\trainingvideos\VideoController:delete" type="service_closure" id=".service_locator.qrnShc5"/>
+        <argument key="App\Controller\trainingvideos\VideoController:edit" type="service_closure" id=".service_locator.qrnShc5"/>
+        <argument key="App\Controller\trainingvideos\VideoController:index" type="service_closure" id=".service_locator.pJUCJBw"/>
+        <argument key="App\Controller\trainingvideos\VideoController:new" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\trainingvideos\VideoController:search" type="service_closure" id=".service_locator.pJUCJBw"/>
+        <argument key="App\Controller\trainingvideos\VideoController:show" type="service_closure" id=".service_locator.egcZKKl"/>
+        <argument key="App\Controller\trainingvideos\VideoController:showShoesByStatus" type="service_closure" id=".service_locator._TEH.LM"/>
+        <argument key="App\Controller\trainingvideos\VideoController:updateStatus" type="service_closure" id=".service_locator._TEH.LM"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
       </argument>
@@ -4513,12 +4637,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.J5OM7cB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VH9WX8l" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
-        <argument key="App\Form\VoucherType" type="service_closure" id="App\Form\VoucherType"/>
-        <argument key="App\Form\VoucherTypeEdit" type="service_closure" id="App\Form\VoucherTypeEdit"/>
+        <argument key="App\Form\reissuevoucher\RegistrationFormType" type="service_closure" id="App\Form\reissuevoucher\RegistrationFormType"/>
+        <argument key="App\Form\reissuevoucher\VoucherType" type="service_closure" id="App\Form\reissuevoucher\VoucherType"/>
+        <argument key="App\Form\reissuevoucher\VoucherTypeEdit" type="service_closure" id="App\Form\reissuevoucher\VoucherTypeEdit"/>
+        <argument key="App\Form\trainingvideos\CategoryType" type="service_closure" id="App\Form\trainingvideos\CategoryType"/>
+        <argument key="App\Form\trainingvideos\VideoType" type="service_closure" id="App\Form\trainingvideos\VideoType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -4535,11 +4661,13 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator._unNqCA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VT8Gtl0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
-        <argument key="App\Repository\VoucherRepository" type="service_closure" id="App\Repository\VoucherRepository"/>
+        <argument key="App\Repository\reissuevoucher\UserRepository" type="service_closure" id="App\Repository\reissuevoucher\UserRepository"/>
+        <argument key="App\Repository\reissuevoucher\VoucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
+        <argument key="App\Repository\trainingvideos\CategoryRepository" type="service_closure" id="App\Repository\trainingvideos\CategoryRepository"/>
+        <argument key="App\Repository\trainingvideos\VideoRepository" type="service_closure" id="App\Repository\trainingvideos\VideoRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -4596,21 +4724,33 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.GNc8e5B.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
-      <argument>App\Controller\RegistrationController</argument>
+    <service id=".service_locator.GNc8e5B.App\Controller\reissuevoucher\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\reissuevoucher\RegistrationController"/>
+      <argument>App\Controller\reissuevoucher\RegistrationController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
-    <service id=".service_locator.GNc8e5B.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
-      <argument>App\Controller\SecurityController</argument>
+    <service id=".service_locator.GNc8e5B.App\Controller\reissuevoucher\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\reissuevoucher\SecurityController"/>
+      <argument>App\Controller\reissuevoucher\SecurityController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
-    <service id=".service_locator.GNc8e5B.App\Controller\VoucherController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\VoucherController"/>
-      <argument>App\Controller\VoucherController</argument>
+    <service id=".service_locator.GNc8e5B.App\Controller\reissuevoucher\VoucherController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\reissuevoucher\VoucherController"/>
+      <argument>App\Controller\reissuevoucher\VoucherController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\trainingvideos\CategoryController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\trainingvideos\CategoryController"/>
+      <argument>App\Controller\trainingvideos\CategoryController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\trainingvideos\VideoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\trainingvideos\VideoController"/>
+      <argument>App\Controller\trainingvideos\VideoController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
@@ -4745,12 +4885,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.s.Qsbce"/>
+      <argument type="service" id=".service_locator.eTh4acQ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.s.Qsbce"/>
+      <argument type="service" id=".service_locator.eTh4acQ"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -4759,8 +4899,12 @@
       </call>
     </service>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
-    <service id=".errored..service_locator.Tc3bGFc.App\Entity\Voucher" class="App\Entity\Voucher"/>
-    <service id=".errored..service_locator.jStmmMc.App\Entity\Voucher" class="App\Entity\Voucher"/>
+    <service id=".errored..service_locator.Jqd_se5.App\Entity\reissuevoucher\Voucher" class="App\Entity\reissuevoucher\Voucher"/>
+    <service id=".errored..service_locator.5pAjOGf.App\Entity\reissuevoucher\Voucher" class="App\Entity\reissuevoucher\Voucher"/>
+    <service id=".errored..service_locator.WA5zrpe.App\Entity\trainingvideos\Category" class="App\Entity\trainingvideos\Category"/>
+    <service id=".errored..service_locator.3uqpK_F.App\Entity\trainingvideos\Category" class="App\Entity\trainingvideos\Category"/>
+    <service id=".errored..service_locator.egcZKKl.App\Entity\trainingvideos\Video" class="App\Entity\trainingvideos\Video"/>
+    <service id=".errored..service_locator.qrnShc5.App\Entity\trainingvideos\Video" class="App\Entity\trainingvideos\Video"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
       <argument type="collection"/>
@@ -5463,7 +5607,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.s.Qsbce"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.eTh4acQ"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -5472,11 +5616,13 @@
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.BzSfdHr" alias=".service_locator.RxoADQi"/>
-    <service id=".service_locator.5cdFlvc" alias=".service_locator.eyfOthP"/>
-    <service id=".service_locator.xE2Uhoy" alias=".service_locator.s.Qsbce"/>
+    <service id=".service_locator.zpWkEIB" alias=".service_locator.2PEbKYl"/>
+    <service id=".service_locator._uOuRFx" alias=".service_locator.fZ_fM5A"/>
+    <service id=".service_locator.UpDOsjY" alias=".service_locator.pJUCJBw"/>
+    <service id=".service_locator.X_hCLcH" alias=".service_locator._TEH.LM"/>
+    <service id=".service_locator.DAxJyGV" alias=".service_locator.eTh4acQ"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.y6HqBh_" alias=".service_locator.J5OM7cB"/>
+    <service id=".service_locator.qrtIci2" alias=".service_locator.VH9WX8l"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
     <service id=".service_locator.W9y3dzm" alias=".service_locator.GNc8e5B"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
@@ -5498,11 +5644,19 @@
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
     <service id=".service_locator.LzwvCJx" alias=".service_locator.4u5os03"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
-    <service id=".service_locator.f.K7OGW" alias=".service_locator.ztv7FYg"/>
-    <service id=".service_locator.B7udISf" alias=".service_locator.RxoADQi"/>
-    <service id=".service_locator.gpRuDBQ" alias=".service_locator.Tc3bGFc"/>
-    <service id=".service_locator.CCIOHkw" alias=".service_locator.jStmmMc"/>
-    <service id=".service_locator.U_3M7v_" alias=".service_locator.eyfOthP"/>
+    <service id=".service_locator.JwcOLJ." alias=".service_locator.qhJ5uJH"/>
+    <service id=".service_locator.QYJrFxw" alias=".service_locator.2PEbKYl"/>
+    <service id=".service_locator.Tj4vYcd" alias=".service_locator.Jqd_se5"/>
+    <service id=".service_locator..86TXVh" alias=".service_locator.5pAjOGf"/>
+    <service id=".service_locator.xtfxoBp" alias=".service_locator.fZ_fM5A"/>
+    <service id=".service_locator.q0XShSm" alias=".service_locator.ROI4CUb"/>
+    <service id=".service_locator.54Or3jx" alias=".service_locator.WA5zrpe"/>
+    <service id=".service_locator.TecTyDK" alias=".service_locator.3uqpK_F"/>
+    <service id=".service_locator.3F4x5i3" alias=".service_locator.pJUCJBw"/>
+    <service id=".service_locator.tturmEe" alias=".service_locator._TEH.LM"/>
+    <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
+    <service id=".service_locator.8ohjpZ3" alias=".service_locator.egcZKKl"/>
+    <service id=".service_locator..mmcmao" alias=".service_locator.qrnShc5"/>
     <service id=".service_locator.S3Bk2.h" alias=".service_locator.GNc8e5B"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.aa1PbBb" alias=".service_locator.nLgZj7R"/>

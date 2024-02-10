@@ -1,0 +1,13 @@
+{% extends 'training_videos/base.html.twig' %}
+
+{% block title %}New Category{% endblock %}
+
+{% block header %}
+{% endblock %}
+{% block sidebar %}
+{% endblock %}
+{% block main %}
+    {{ include('training_videos/category/_form.html.twig') }}
+
+    <a href="{{ path('video_app_category_index') }}">back to list</a>
+{% endblock %}

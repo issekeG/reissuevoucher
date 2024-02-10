@@ -1,3 +1,123 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+voucher_app_register:
+  path: reissuevoucher/register
+  controller : App\Controller\reissuevoucher\RegistrationController::register
+  methods: [GET, POST]
+
+
+voucher_app_login:
+  path: reissuevoucher/login
+  controller : App\Controller\reissuevoucher\SecurityController::login
+  methods: [GET, POST]
+
+voucher_app_logout:
+  path: reissuevoucher/logout
+  controller : App\Controller\reissuevoucher\SecurityController::logout
+  methods: [GET, POST]
+
+app_voucher_index:
+  path: reissuevoucher/voucher
+  controller : App\Controller\reissuevoucher\VoucherController::index
+  methods: [GET]
+
+
+app_voucher_new:
+  path: reissuevoucher/voucher/form
+  controller : App\Controller\reissuevoucher\VoucherController::new
+  methods: [GET, POST]
+
+app_voucher_search:
+  path: reissuevoucher/voucher/search
+  controller : App\Controller\reissuevoucher\VoucherController::search
+  methods: [GET, POST]
+
+
+app_voucher_show:
+  path: reissuevoucher/voucher/{id}
+  controller : App\Controller\reissuevoucher\VoucherController::show
+  methods: [GET]
+
+app_voucher_edit:
+  path: reissuevoucher/voucher/{id}/edit
+  controller : App\Controller\reissuevoucher\VoucherController::edit
+  methods: [GET, POST]
+
+app_voucher_delete:
+  path: reissuevoucher/voucher/{id}
+  controller : App\Controller\reissuevoucher\VoucherController::delete
+  methods: [GET, POST]
+
+voucher_update_status:
+  path: reissuevoucher/voucher/update/{status}/{id}
+  controller : App\Controller\reissuevoucher\VoucherController::updateStatus
+  methods: [GET, POST]
+
+voucher_dashboard_status:
+  path: reissuevoucher/voucher/update/{status}
+  controller : App\Controller\reissuevoucher\VoucherController::showShoesByStatus
+  methods: [GET, POST]
+
+app_video_index:
+  path: trainingvideos/videos
+  controller : App\Controller\trainingvideos\VideoController::index
+  methods: [GET]
+
+app_video_search:
+  path: trainingvideos/video
+  controller : App\Controller\trainingvideos\VideoController::search
+  methods: [GET, POST]
+
+video_update_status:
+  path: trainingvideos/video/update/{status}/{id}
+  controller : App\Controller\trainingvideos\VideoController::updateStatus
+  methods: [GET, POST]
+
+app_video_new:
+  path: trainingvideos/video/form
+  controller : App\Controller\trainingvideos\VideoController::new
+  methods: [GET, POST]
+
+app_video_edit:
+  path: trainingvideos/video/{id}/edit
+  controller : App\Controller\trainingvideos\VideoController::edit
+  methods: [GET, POST]
+
+app_video_delete:
+  path: trainingvideos/video/{id}
+  controller : App\Controller\trainingvideos\VideoController::delete
+  methods: [POST]
+
+video_dashboard_category:
+  path: trainingvideos/video/update/{category_id}
+  controller : App\Controller\trainingvideos\VideoController::showShoesByStatus
+  methods: [GET, POST]
+
+video_app_category_index:
+  path: trainingvideos/category
+  controller : App\Controller\trainingvideos\CategoryController::index
+  methods: [GET]
+
+video_app_category_new:
+  path: trainingvideos/category/new
+  controller : App\Controller\trainingvideos\CategoryController::new
+  methods: [GET, POST]
+
+video_app_category_show:
+  path: trainingvideos/category/{id}
+  controller : App\Controller\trainingvideos\CategoryController::show
+  methods: [GET]
+
+video_app_category_edit:
+  path: trainingvideos/category/{id}/edit
+  controller : App\Controller\trainingvideos\CategoryController::edit
+  methods: [GET, POST]
+
+video_app_category_delete:
+  path: trainingvideos/category/{id}
+  controller : App\Controller\trainingvideos\CategoryController::delete
+  methods: [POST]
+
+
