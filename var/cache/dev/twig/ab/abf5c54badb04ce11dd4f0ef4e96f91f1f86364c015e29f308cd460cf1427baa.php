@@ -26,7 +26,6 @@ class __TwigTemplate_270add50bea520b44bf0c922dfb784b818719d5abee5900498ab697eeb8
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'header' => [$this, 'block_header'],
             'sidebar' => [$this, 'block_sidebar'],
             'main' => [$this, 'block_main'],
         ];
@@ -64,19 +63,7 @@ class __TwigTemplate_270add50bea520b44bf0c922dfb784b818719d5abee5900498ab697eeb8
 
     }
 
-    // line 5
-    public function block_header($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
-
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 7
+    // line 6
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -88,17 +75,17 @@ class __TwigTemplate_270add50bea520b44bf0c922dfb784b818719d5abee5900498ab697eeb8
 
     }
 
-    // line 9
+    // line 8
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 10
+        // line 9
         echo "
     ";
-        // line 11
+        // line 10
         echo twig_include($this->env, $context, "training_videos/video/_form.html.twig");
         echo "
 ";
@@ -128,7 +115,7 @@ class __TwigTemplate_270add50bea520b44bf0c922dfb784b818719d5abee5900498ab697eeb8
      */
     public function getDebugInfo()
     {
-        return array (  102 => 11,  99 => 10,  92 => 9,  80 => 7,  68 => 5,  55 => 3,  38 => 1,);
+        return array (  89 => 10,  86 => 9,  79 => 8,  67 => 6,  54 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -137,8 +124,7 @@ class __TwigTemplate_270add50bea520b44bf0c922dfb784b818719d5abee5900498ab697eeb8
 
 {% block title %}New Video{% endblock %}
 
-{% block header %}
-{% endblock %}
+
 {% block sidebar %}
 {% endblock %}
 {% block main %}

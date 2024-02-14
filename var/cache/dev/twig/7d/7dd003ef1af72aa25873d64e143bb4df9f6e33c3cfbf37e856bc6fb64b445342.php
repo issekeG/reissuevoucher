@@ -143,7 +143,7 @@ class __TwigTemplate_432bfb2703697eb981bb9772a6fadb001734f955469104b641abae1697d
         $context['_seq'] = twig_ensure_traversable((isset($context["videos"]) || array_key_exists("videos", $context) ? $context["videos"] : (function () { throw new RuntimeError('Variable "videos" does not exist.', 42, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["video"]) {
             // line 43
-            echo "                          <div class=\"col-xxl-4 col-md-4\">
+            echo "                          <div class=\"col-xxl-4 col-md-4 col-lg-3\">
                               <div class=\"card info-card sales-card custom-card mb-3\">
                                   <div class=\"card-body\">
                                       <div class=\"d-flex align-items-center text-center\">
@@ -394,7 +394,7 @@ class __TwigTemplate_432bfb2703697eb981bb9772a6fadb001734f955469104b641abae1697d
                   <div class=\"row\">
 
                       {% for video in videos %}
-                          <div class=\"col-xxl-4 col-md-4\">
+                          <div class=\"col-xxl-4 col-md-4 col-lg-3\">
                               <div class=\"card info-card sales-card custom-card mb-3\">
                                   <div class=\"card-body\">
                                       <div class=\"d-flex align-items-center text-center\">
