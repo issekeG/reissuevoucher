@@ -31,18 +31,22 @@
 {% block header %}
 <header id="header" class="header fixed-top d-flex align-items-center">
 
-    {# <div class="d-flex align-items-center justify-content-between">
-        <a href="" class="logo d-flex align-items-center">
-            <span class="d-none d-lg-block ms-2">Chiron</span>
-        </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
 
-    </div> #}<!-- End Logo -->
+    {% if app.session.has('cart') %}
+        {% set cart = app.session.get('cart') %}
+    {% endif %}
+    {% if app.session.has('what-new-title') %}
+        {% set title = app.session.get('what-new-title') %}
+    {%  else %}
+        {% set title ="" %}
+    {% endif %}
+
+
 
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="{# {{ path('home') }} #}">
+        <a class="navbar-brand" href=" {{ path('home') }} ">
             <img src="https://img.exclusivebooks.co.za/logo/eb-logo-white.png" width="30" height="30"
                  class="d-inline-block align-top" alt="EB" title="Exclusive Books">
             Chiron
@@ -64,12 +68,12 @@
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="voucherDropdown">
 
                         <div class="dropdown-header">Vouchers &amp; Gift Cards</div>
-                        <a class="dropdown-item" href="{# {{ path('voucher_lookup') }} #}">Voucher Lookup</a>
-                        <a class="dropdown-item" href="{#{{ path('gift_card_lookup') }}#}">Gift Card Lookup</a>
-                        <a class="dropdown-item" href="{#{{ path('gift_card_lookup') }}#}">Send Voucher mail </a>
+                        <a class="dropdown-item" href=" {{ path('voucher_lookup') }} ">Voucher Lookup</a>
+                        <a class="dropdown-item" href="{{ path('gift_card_lookup') }}">Gift Card Lookup</a>
+                        <a class="dropdown-item" href="{{ path('gift_card_lookup') }}">Send Voucher mail </a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Discount Coupons</div>
-                        <a class="dropdown-item" href="{#{{ path('coupon_lookup') }}#}">Lookup</a>
+                        <a class="dropdown-item" href="{{ path('coupon_lookup') }}">Lookup</a>
                         <!--
                     <div class="dropdown-divider"></div>
                     <div class="dropdown-header">Pre Order Vouchers</div>
@@ -82,10 +86,10 @@
                         {% if is_granted('ROLE_IBST_REPORT') %}
                             <div class="dropdown-header">Voucher & Gift administration</div>
 
-                            <a class="dropdown-item" href="{#{{ path('linkVoucherToGift') }}#}">Link Voucher to Gift  card</a>
+                            <a class="dropdown-item" href="{{ path('linkVoucherToGift') }}">Link Voucher to Gift  card</a>
                         {% endif %}
                         {% if is_granted('ROLE_ONLINE_ADMIN') %}
-                            <a class="dropdown-item" href="{#{{ path('LookupChangeVoucher') }}#}">Lookup Change Voucher</a>
+                            <a class="dropdown-item" href="{{ path('LookupChangeVoucher') }}">Lookup Change Voucher</a>
                             {#   <a class="dropdown-item" href="{{ path('VoucherStatusReset') }}">Voucher Lookup  by  Receipt</a> #}
                         {% endif %}
 
@@ -93,7 +97,7 @@
                         {% if is_granted('ROLE_ONLINE_ADMIN') %}
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-header">Online Order administration</div>
-                            <a class="dropdown-item" href="{#{{ path('ReverseOnlineRefund') }}#}">Reverse Online Refund</a>
+                            <a class="dropdown-item" href="{{ path('ReverseOnlineRefund') }}">Reverse Online Refund</a>
                         {% endif %}
                     </div>
                 </li>
@@ -105,20 +109,20 @@
 
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="dashDropdown">
                         <div class="dropdown-header">Dashboards</div>
-                        <a class="dropdown-item" href="{#{{ path('View_Delayed_Orders') }}#}">Potentially Delayed Orders Dashboard</a>
-                        <a class="dropdown-item" href="{#{{ path('View_Overdue_Orders') }}#}">Overdue Orders Dashboard</a>
+                        <a class="dropdown-item" href="{{ path('View_Delayed_Orders') }}">Potentially Delayed Orders Dashboard</a>
+                        <a class="dropdown-item" href="{{ path('View_Overdue_Orders') }}">Overdue Orders Dashboard</a>
                         {# <a class="dropdown-item" href="{{ path('ExportVoucherList') }}">Export Corporate Order Voucher List</a> #}
-                        <a class="dropdown-item" href="{#{{ path('View_Overdue_Dropship') }} #}">Overdue Dropship Dashboard</a>
-                        <a class="dropdown-item" href="{#{{ path('View_Overdue_IBST') }} #}">Overdue IBST Dashboard</a>
-                        <a class="dropdown-item" href="{#{{ path('ViewRefunds') }} #}">Online Refunds Dashboard</a>
+                        <a class="dropdown-item" href="{{ path('View_Overdue_Dropship') }}">Overdue Dropship Dashboard</a>
+                        <a class="dropdown-item" href="{{ path('View_Overdue_IBST') }}">Overdue IBST Dashboard</a>
+                        <a class="dropdown-item" href="{{ path('ViewRefunds') }} ">Online Refunds Dashboard</a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Manage Orders</div>
-                        <a class="dropdown-item" href="{#{{ path('ReverseOnlineRefund') }} #}">Reverse Online Refund</a>
+                        <a class="dropdown-item" href="{{ path('ReverseOnlineRefund') }}">Reverse Online Refund</a>
                         {# <a class="dropdown-item" href="{{ path('Reset_dropship_line') }} ">Reset Dropship Order Line</a> #}
-                        <a class="dropdown-item" href="{#{{ path('ReinstateVoidedOrder') }} #}">Reinstate voided order</a>
-                        <a class="dropdown-item" href="{#{{ path('MinusDelivery') }} #}">Subtract Delivery from Refund</a>
-                        <a class="dropdown-item" href="{#{{ path('ChangeRefundType') }} #}">Change Refund Type</a>
-                        <a class="dropdown-item" href="{#{{ path('ChangePaymentType') }} #}">Change Payment Type</a>
+                        <a class="dropdown-item" href="{{ path('ReinstateVoidedOrder') }}">Reinstate voided order</a>
+                        <a class="dropdown-item" href="{{ path('MinusDelivery') }} ">Subtract Delivery from Refund</a>
+                        <a class="dropdown-item" href="{{ path('ChangeRefundType') }} ">Change Refund Type</a>
+                        <a class="dropdown-item" href="{{ path('ChangePaymentType') }} ">Change Payment Type</a>
                     </div>
                 </li>
 
@@ -130,29 +134,29 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <div class="dropdown-header">IBSTs</div>
-                        <a class="dropdown-item" href="{#{{ path('ibst_dashboard') }} #}">Dashboard</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_search_get') }} #}">Lookup</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_stock_lookup') }} #}">New Request</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_scan_get',{'action':'dispatch'}) }} #}">Dispatch</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_scan_get',{'action':'receive'}) }} #}">Receive</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_scan_get',{'action':'return-out'}) }} #}">Return to
+                        <a class="dropdown-item" href="{{ path('ibst_dashboard') }} ">Dashboard</a>
+                        <a class="dropdown-item" href="{{ path('ibst_search_get') }} ">Lookup</a>
+                        <a class="dropdown-item" href="{{ path('ibst_stock_lookup') }} ">New Request</a>
+                        <a class="dropdown-item" href="{{ path('ibst_scan_get',{'action':'dispatch'}) }} ">Dispatch</a>
+                        <a class="dropdown-item" href="{{ path('ibst_scan_get',{'action':'receive'}) }} ">Receive</a>
+                        <a class="dropdown-item" href="{{ path('ibst_scan_get',{'action':'return-out'}) }} ">Return to
                             Store</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_scan_get',{'action':'return-in'}) }} #}">Receive Returned
+                        <a class="dropdown-item" href="{{ path('ibst_scan_get',{'action':'return-in'}) }} ">Receive Returned
                             IBST</a>
-                        <a class="dropdown-item" href="{#{{ path('ibst_manage_declines') }} #}">Manage Declines</a>
+                        <a class="dropdown-item" href="{{ path('ibst_manage_declines') }} ">Manage Declines</a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Shipping</div>
-                        <a class="dropdown-item" href="{#{{ url('convergex_waybill_print') }} #}">Print Convergex Waybill</a>
-                        <a class="dropdown-item" href="{#{{ path('drop_shipping_show_manifest') }} #}">Create Manifest</a>
+                        <a class="dropdown-item" href="{{ url('convergex_waybill_print') }}">Print Convergex Waybill</a>
+                        <a class="dropdown-item" href="{{ path('drop_shipping_show_manifest')}}">Create Manifest</a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Bulk IBSTs</div>
                         {% if is_granted('ROLE_BULK_IBST') %}
-                            <a class="dropdown-item" href="{#{{ path('ibst_bulk_upload') }} #}">Upload Bulk IBST</a>
+                            <a class="dropdown-item" href="{{ path('ibst_bulk_upload') }} ">Upload Bulk IBST</a>
                         {% endif %}
                         <!---
                     <a class="dropdown-item" href="{#{{ path('ibst_recall_stock',{'storeCode':'WS'}) }} #}">Recall
                         Aged Stock</a>---->
-                        <a class="dropdown-item" href="{#{{ path('ibst_recall_stock',{'storeCode':'HW'}) }}#}">Recall
+                        <a class="dropdown-item" href="{{ path('ibst_recall_stock',{'storeCode':'HW'}) }}">Recall
                             Sales Stock</a>
                     </div>
                 </li>
@@ -164,30 +168,30 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="customerDropdown">
                         <div class="dropdown-header">Fanatics</div>
-                        <a class="dropdown-item" href="{#{{ path('customer_fanatics_search') }} #}">Search</a>
-                        <a class="dropdown-item" href="{#{{ path('customer_fanatics_activation_lookup') }} #}">Activation</a>
+                        <a class="dropdown-item" href="{{ path('customer_fanatics_search') }} ">Search</a>
+                        <a class="dropdown-item" href="{{ path('customer_fanatics_activation_lookup') }} ">Activation</a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Website Orders</div>
-                        <a class="dropdown-item" href="{#{{ path('customer_website_order_search') }} #}">Order Lookup</a>
+                        <a class="dropdown-item" href="{{ path('customer_website_order_search') }} ">Order Lookup</a>
                         {% if is_granted('ROLE_USER') %}
-                            <a class="dropdown-item" href="{#{{ path('customer_website_order_tracking_receive') }}#}">Receive
+                            <a class="dropdown-item" href="{{ path('customer_website_order_tracking_receive') }}">Receive
                                 Online
                                 Parcel</a>
-                            <a class="dropdown-item" href="{#{{ path('customer_website_order_tracking_collect') }} #}">Log
+                            <a class="dropdown-item" href="{{ path('customer_website_order_tracking_collect') }} ">Log
                                 Customer
                                 Collection</a>
-                            <a class="dropdown-item" href="{#{{ path('customer_send_sms') }}#}">Send Customer SMS</a>
+                            <a class="dropdown-item" href="{{ path('customer_send_sms') }}">Send Customer SMS</a>
                         {% endif %}
                         {% if is_granted('ROLE_ONLINE_ADMIN') %}
-                            <a class="dropdown-item" href="{#{{ path('LookUpDropshipOrder') }}#}">Reset Dropshipping Order</a>
+                            <a class="dropdown-item" href="{{ path('LookUpDropshipOrder') }}">Reset Dropshipping Order</a>
                         {% endif %}
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Book Clubs</div>
-                        <a class="dropdown-item" href="{#{{ path('customer_book_club_search') }}#}">Search</a>
+                        <a class="dropdown-item" href="{{ path('customer_book_club_search') }}">Search</a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">Customers</div>
-                        <a class="dropdown-item" href="{#{{ path('customer_debtors') }}#}">View Account List</a>
-                        <a class="dropdown-item" href="{#{{ path('sales_store_receipt_lookup') }}#}">Lookup Store Receipt</a>
+                        <a class="dropdown-item" href="{{ path('customer_debtors') }}">View Account List</a>
+                        <a class="dropdown-item" href="{{ path('sales_store_receipt_lookup') }}">Lookup Store Receipt</a>
                     </div>
                 </li>
 
@@ -198,19 +202,19 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="dropShippingDropdown">
                             <div class="dropdown-header">Drop Shipping</div>
-                            <a class="dropdown-item" href="{#{{ path('drop_shipping_store_dashboard') }}#}">Dashboard</a>
-                            <a class="dropdown-item" href="{#{{ path('drop_shipping_search_get') }}#}">Picking Slip Lookup</a>
-                            <a class="dropdown-item" href="{#{{ path('drop_shipping_online_dispatch_get') }}#}">Dispatch Online
+                            <a class="dropdown-item" href="{{ path('drop_shipping_store_dashboard') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ path('drop_shipping_search_get') }}">Picking Slip Lookup</a>
+                            <a class="dropdown-item" href="{{ path('drop_shipping_online_dispatch_get') }}">Dispatch Online
                                 Order</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{#{{ path('drop_shipping_show_manifest') }}#}">Create Manifest</a>
+                            <a class="dropdown-item" href="{{ path('drop_shipping_show_manifest') }}">Create Manifest</a>
 
                             {% if is_granted('ROLE_PROCURE') %}
                                 <div class="dropdown-divider"></div>
                                 <div class="dropdown-header">Rohan</div>
-                                <a class="dropdown-item" href="{#{{ path('herakles_pslip_get') }}#}">View Legacy Picking
+                                <a class="dropdown-item" href="{{ path('herakles_pslip_get') }}">View Legacy Picking
                                     Slip</a>
-                                <a class="dropdown-item" href="{#{{ path('open_gift_report') }}#}">Open Gift Orders</a>
+                                <a class="dropdown-item" href="{{ path('open_gift_report') }}">Open Gift Orders</a>
                             {% endif %}
                         </div>
                     </li>
@@ -228,8 +232,8 @@
 
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="dropShippingDropdown">
                             <div class="dropdown-header">Quotation</div>
-                            <a class="dropdown-item" href="{#{{ path('quotation') }}#}">Create Quotation</a>
-                            <a class="dropdown-item" href="{#{{ path('view_quotation') }}#}">View Quotation</a>
+                            <a class="dropdown-item" href="{{ path('quotation') }}">Create Quotation</a>
+                            <a class="dropdown-item" href="{{ path('view_quotation') }}">View Quotation</a>
 
                         </div>
                     </li>
@@ -244,17 +248,17 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="ibstReportsDropdown">
                             <div class="dropdown-header">IBSTs</div>
-                            <a class="dropdown-item" href="{#{{ url('ibst_reports',{'type':'summary'}) }}#}">IBST
+                            <a class="dropdown-item" href="{{ url('ibst_reports',{'type':'summary'}) }}">IBST
                                 Summary Report</a>
-                            <a class="dropdown-item" href="{#{{ url('ibst_reports',{'type':'manifest'}) }}#}">IBST
+                            <a class="dropdown-item" href="{{ url('ibst_reports',{'type':'manifest'}) }}">IBST
                                 Manifest Report</a>
-                            <a class="dropdown-item" href="{#{{ url('ibst_reports',{'type':'detail'}) }}#}">IBST
+                            <a class="dropdown-item" href="{{ url('ibst_reports',{'type':'detail'}) }}">IBST
                                 Detail Report</a>
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-header">Goods in Transit</div>
-                            <a class="dropdown-item" href="{#{{ url('ibst_reports',{'type':'git'}) }}#}">Goods In
+                            <a class="dropdown-item" href="{{ url('ibst_reports',{'type':'git'}) }}">Goods In
                                 Transit Listing</a>
-                            <a class="dropdown-item" href="{#{{ url('ibst_reports',{'type':'git-summary'}) }}#}">G-I-T
+                            <a class="dropdown-item" href="{{ url('ibst_reports',{'type':'git-summary'}) }}">G-I-T
                                 Summary Report</a>
 
                             <div class="dropdown-divider"></div>
@@ -267,14 +271,14 @@
 
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-header">Online Reports</div>
-                            <a class="dropdown-item" href="{#{{ url('ibst_reports',{'type':'sales'}) }}#}">Drop Shipping
+                            <a class="dropdown-item" href="{{ url('ibst_reports',{'type':'sales'}) }}">Drop Shipping
                                 Summary Report</a>
-                            <a class="dropdown-item" href="{#{{ url('online_stats_report') }}#}">Dispatch Stats
+                            <a class="dropdown-item" href="{{ url('online_stats_report') }}">Dispatch Stats
                                 Report</a>
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-header">Foot Count</div>
 
-                            <a class="dropdown-item" href="{#{{ url('footcount') }}#}">Store Foot Count
+                            <a class="dropdown-item" href="{{ url('footcount') }}">Store Foot Count
                                 Report</a>
                             <div class="dropdown-divider"></div>
                             <!--{#
@@ -287,9 +291,9 @@
                             #} -->
 
                             <div class="dropdown-header">Store  Audit Checklist</div>
-                            <a class="dropdown-item" href="{#{{ url('StoreChecklist') }}#}">Audit Checklist  Dashboard
+                            <a class="dropdown-item" href="{{ url('StoreChecklist') }}">Audit Checklist  Dashboard
                             </a>
-                            <a class="dropdown-item" href="{#{{ url('AddAuditdate') }}#}">Add new Store audit
+                            <a class="dropdown-item" href="{{ url('AddAuditdate') }}">Add new Store audit
                             </a>
 
                         </div>
@@ -303,16 +307,16 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="cmsDropdown">
                             <div class="dropdown-header">Content Management</div>
-                            <a class="dropdown-item" href="{#{{ path('cms_campaign_upload') }}#}">Campaign Upload</a>
-                            <a class="dropdown-item" href="{#{{ path('cms_campaign_list') }}#}">Campaign Management</a>
+                            <a class="dropdown-item" href="{{ path('cms_campaign_upload') }}">Campaign Upload</a>
+                            <a class="dropdown-item" href="{{ path('cms_campaign_list') }}">Campaign Management</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{#{{ path('cms_add_product') }}#}">Add Product</a>
+                            <a class="dropdown-item" href="{{ path('cms_add_product') }}">Add Product</a>
                         </div>
                     </li>
                 {% endif %}
 
                 <li>
-                    <a class="nav-link" href="{#{{ url('whats_new') }}#}">Whats New</a>
+                    <a class="nav-link" href="{{ url('whats_new') }}">Whats New</a>
                 </li>
 
                 <li class="nav-item dropdown pe-3">
@@ -356,7 +360,7 @@
 
                 <li>
 
-                    <a href="{#{{ url('whats_new') }}#}"><span class="nav-link" style="color:white; font-weight: bold"><strong>{# {{ title }} #}</strong></span></a>
+                    <a href="{{ url('whats_new') }}"><span class="nav-link" style="color:white; font-weight: bold"><strong> {{ title }} </strong></span></a>
                 </li>
             </ul>
 
@@ -365,14 +369,14 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown" data-toggle="popover" data-content="Catalogue Search" data-trigger="hover"
                     data-placement="bottom">
-                    <a class="nav-link" href="{#{{ url('input_search') }}#}">
+                    <a class="nav-link" href="{{ url('input_search') }}">
                         <span class="fa fa-search"></span>
                     </a>
                 </li>
                 {% if app.session.has('storeCode') %}
                     <li class="nav-item dropdown" data-toggle="popover" data-content="IBST Cart Items" data-trigger="hover"
                         data-placement="bottom">
-                        <a class="nav-link" href="{#{{ path('ibst_review', {'store': app.session.get('storeCode')}) }}#}">
+                        <a class="nav-link" href="{{ path('ibst_review', {'store': app.session.get('storeCode')}) }}">
                             <span class="fa fa-shopping-cart"></span>
                             <sub>
                         <span id="shoppingcartQty"
@@ -391,12 +395,12 @@
 
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="navbarDropdown">
                         <div class="dropdown-header">Reference</div>
-                        <a class="dropdown-item" href="{#{{ path('reference_documents') }}#}">Guides &amp; Manuals</a>
+                        <a class="dropdown-item" href="{{ path('reference_documents') }}">Guides &amp; Manuals</a>
 
-                        <a class="dropdown-item" href="{#{{ url('employee_list') }}#}">Employee list</a>
-                        <a class="dropdown-item" href="{#{{ path('reference_store_list') }}#}">Store List</a>
-                        <a class="dropdown-item" href="{#{{ path('reference_contact_list') }}#}">Contact List</a>
-                        <a class="dropdown-item" href="{#{{ path('reference_links') }}#}">Useful Links</a>
+                        <a class="dropdown-item" href="{{ url('employee_list') }}">Employee list</a>
+                        <a class="dropdown-item" href="{{ path('reference_store_list') }}">Store List</a>
+                        <a class="dropdown-item" href="{{ path('reference_contact_list') }}">Contact List</a>
+                        <a class="dropdown-item" href="{{ path('reference_links') }}">Useful Links</a>
 
                         <div class="dropdown-header">Support</div>
                         <a class="dropdown-item" href="http://itsupport.exclusivebooks.co.za" target="_blank">IT Support
@@ -432,13 +436,13 @@
 
 
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="authDropdown">
-                            <a class="dropdown-item" href="{#{{ path('app_change_store_list') }}#}">Change Store</a>
+                            <a class="dropdown-item" href="{{ path('app_change_store_list') }}">Change Store</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{#{{ path('logout' ) }}#}">Log out</a>
+                            <a class="dropdown-item" href="{{ path('logout' ) }}">Log out</a>
                             {% if is_granted('ROLE_SU') %}
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{#{{ path('admin_etl_dashboard') }}#}">Job Dashboard</a>
-                                <a class="dropdown-item" href="{#{{ path('admin_sales_dashboard') }}#}">Sales summary</a>
+                                <a class="dropdown-item" href="{{ path('admin_etl_dashboard') }}">Job Dashboard</a>
+                                <a class="dropdown-item" href="{{ path('admin_sales_dashboard') }}">Sales summary</a>
                             {% endif %}
                         </div>
 
@@ -446,7 +450,7 @@
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{# {{ path('login') }}#}">Log in</a>
+                        <a class="nav-link" href="{{ path('login') }}">Log in</a>
                     </li>
                 {% endif %}
             </ul>
