@@ -29,6 +29,7 @@
 
                     <a class="dropdown-item" href="{#{{ path('linkVoucherToGift') }}#}">Link Voucher to Gift  card</a>
                 {% endif %}
+
                 {% if is_granted('ROLE_ONLINE_ADMIN') %}
                     <a class="dropdown-item" href="{#{{ path('LookupChangeVoucher') }}#}">Lookup Change Voucher</a>
                     {#   <a class="dropdown-item" href="{{ path('VoucherStatusReset') }}">Voucher Lookup  by  Receipt</a> #}

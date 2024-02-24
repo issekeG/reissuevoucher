@@ -38,7 +38,6 @@ class VoucherType extends AbstractType
             ->add('valueLoadedOnCard', TextType::class, ['label' => 'Value Loaded on Card : ','attr' => ['class' => 'form-control'],])
             ->add('furtherDetails', TextareaType::class, ['label' => 'Any Further Details : ','attr' => ['class' => 'form-control'],])
             ->add('requestedBy', TextType::class, ['label' => 'Requested By : ','attr' => ['class' => 'form-control'],])
-            ->add('requestedBySignature', TextType::class, ['label' => 'Requested By Signature : ','attr' => ['class' => 'form-control'],])
             ->add('requestedDate', DateType::class, ['label' => 'Requested Date : ','attr' => ['class' => 'form-control'],])
             ->add('newEvoucherReference', TextType::class, ['label' => 'New eVoucher Reference : ','attr' => ['class' => 'form-control'],])
             ->add('newEvoucherDate', DateType::class, ['label' => 'New eVoucher Date : ','attr' => ['class' => 'form-control'],])

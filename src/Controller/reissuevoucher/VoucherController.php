@@ -12,9 +12,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Time;
 
 /*
  * @Route("/voucher")
@@ -32,12 +34,33 @@ class VoucherController extends AbstractController
     }
 
     /*
+  * @Route("update/{status}", name="dashboard_status", methods={"POST","GET"})
+  */
+    public function showShoesByStatus(VoucherRepository $voucherRepository, $status): Response
+    {
+        return $this->render('reissuevoucher/voucher/dashboard.html.twig', [
+            'vouchers' => $voucherRepository->findBy(['status' => $status])
+        ]);
+    }
+
+    /*
      * @Route("/form", name="app_voucher_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, VoucherRepository $voucherRepository, MailerInterface $mailer): Response
+    public function new(Request $request, VoucherRepository $voucherRepository, SessionInterface $session): Response
     {
         $voucher = new Voucher();
 
+        $username = $session->get('userName');
+
+        if ($username) {
+            $voucher->setRequestedBy($username);
+        }
+        $voucher->setRequestedDate(New \DateTime());
+        $voucher->setNewEvoucherDate(New \DateTime());
+        $voucher->setTimeOfPurchase(New \DateTime());
+        $voucher->setDateOfPurchase(New \DateTime());
+
+        /*
         $user = $this->getUser();
 
         if ($user instanceof VoucherUser){
@@ -45,20 +68,22 @@ class VoucherController extends AbstractController
         }else{
             $form = $this->createForm(VoucherType::class, $voucher);
         }
-
+         */
+        $form = $this->createForm(VoucherType::class, $voucher);
         $form->handleRequest($request);
 
 
         if ($form->isSubmitted() && $form->isValid()) {
             $voucherRepository->add($voucher, true);
 
+            /*
             if ($user instanceof VoucherUser){
                 $user_email = $user->getEmail();
 
                 $email = (new Email())
 
                     #Replace with the address that should send the emails
-                    ->from('gickelisseke@gmail.com')
+                    ->from('charlotte@gmail.com')
 
                     ->to($user_email)
 
@@ -73,12 +98,18 @@ class VoucherController extends AbstractController
 
                 $mailer->send($email);
             }
+            */
 
             return $this->redirectToRoute('app_voucher_new', [], Response::HTTP_SEE_OTHER);
         }
 
+        return $this->renderForm('reissuevoucher/voucher/new.html.twig', [
+            'voucher' => $voucher,
+            'form' => $form,
+        ]);
 
-        if ($user instanceof VoucherUser){
+
+       /* if ($user instanceof VoucherUser){
             return $this->renderForm('reissuevoucher/voucher/voucher_new_login.html.twig', [
                 'voucher' => $voucher,
                 'form' => $form,
@@ -89,7 +120,7 @@ class VoucherController extends AbstractController
                 'voucher' => $voucher,
                 'form' => $form,
             ]);
-        }
+        }*/
 
     }
 
@@ -115,20 +146,42 @@ class VoucherController extends AbstractController
     }
 
 
-    public function edit(Request $request, Voucher $voucher, VoucherRepository $voucherRepository): Response
+    public function edit(Request $request, Voucher $voucher, SessionInterface $session,VoucherRepository $voucherRepository): Response
     {
+        $username = $session->get('userName');
         $form = $this->createForm(VoucherTypeEdit::class, $voucher);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if ($form->get('reject')->isClicked()) {
+                $voucher->setStatus("Rejected");
+
+            }
+            else if ($form->get('sentOut')->isClicked()) {
+                $voucher->setStatus("Sent out");
+                if ($username) {
+                    $voucher->setSentOutBy($username);
+                }
+            }
+            else if ($form->get('approved')->isClicked()) {
+                $voucher->setStatus("Approved");
+                $voucher->setAuthorizedDate(New \DateTime());
+                if ($username) {
+                    $voucher->setAuthorizedBy($username);
+                }
+
+            }
+
             $voucherRepository->add($voucher, true);
 
             return $this->redirectToRoute('app_voucher_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('reissuevoucher/voucher/edit.html.twig', [
+        return $this->render('reissuevoucher/voucher/edit.html.twig', [
             'voucher' => $voucher,
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -153,13 +206,13 @@ class VoucherController extends AbstractController
     {
 
         $id = (int)$id;
-        $shoes = $voucherRepository->find($id);
+        $voucher = $voucherRepository->find($id);
 
-        if (!$shoes) {
+        if (!$voucher) {
             throw $this->createNotFoundException('ReissueRequest not found with id ' . $id);
         }
 
-        $shoes->setStatus($status);
+        $voucher->setStatus($status);
 
         $entityManager->flush();
 
@@ -167,14 +220,6 @@ class VoucherController extends AbstractController
 
     }
 
-    /*
-     * @Route("update/{status}", name="dashboard_status", methods={"POST","GET"})
-     */
-    public function showShoesByStatus(VoucherRepository $voucherRepository, $status): Response
-    {
-        return $this->render('reissuevoucher/voucher/dashboard.html.twig', [
-            'vouchers' => $voucherRepository->findBy(['status' => $status])
-        ]);
-    }
+
 
 }

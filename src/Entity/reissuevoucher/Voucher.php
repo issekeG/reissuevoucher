@@ -68,11 +68,6 @@ class Voucher
     private $requestedBy;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $requestedBySignature;
-
-    /**
      * @ORM\Column(type="date")
      */
     private $requestedDate;
@@ -85,7 +80,7 @@ class Voucher
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $authorizedSignature;
+    private $sentOutBy;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -286,14 +281,14 @@ class Voucher
         return $this;
     }
 
-    public function getAuthorizedSignature(): ?string
+    public function getSentOutBy(): ?string
     {
-        return $this->authorizedSignature;
+        return $this->sentOutBy;
     }
 
-    public function setAuthorizedSignature(?string $authorizedSignature): self
+    public function setSentOutBy(?string $sentOutBy): self
     {
-        $this->authorizedSignature = $authorizedSignature;
+        $this->sentOutBy = $sentOutBy;
 
         return $this;
     }

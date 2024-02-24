@@ -19,10 +19,9 @@
                 <th>ValueLoadedOnCard</th>
                 <th>FurtherDetails</th>
                 <th>RequestedBy</th>
-                <th>RequestedBySignature</th>
                 <th>RequestedDate</th>
                 <th>AuthorizedBy</th>
-                <th>AuthorizedSignature</th>
+                <th>sentOutBy</th>
                 <th>AuthorizedDate</th>
                 <th>NewEvoucherReference</th>
                 <th>NewEvoucherDate</th>
@@ -46,10 +45,9 @@
                 <td>{{ voucher.valueLoadedOnCard }}</td>
                 <td>{{ voucher.furtherDetails }}</td>
                 <td>{{ voucher.requestedBy }}</td>
-                <td>{{ voucher.requestedBySignature }}</td>
                 <td>{{ voucher.requestedDate ? voucher.requestedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ voucher.authorizedBy }}</td>
-                <td>{{ voucher.authorizedSignature }}</td>
+                <td>{{ voucher.sentOutBy }}</td>
                 <td>{{ voucher.authorizedDate ? voucher.authorizedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ voucher.newEvoucherReference }}</td>
                 <td>{{ voucher.newEvoucherDate ? voucher.newEvoucherDate|date('Y-m-d') : '' }}</td>

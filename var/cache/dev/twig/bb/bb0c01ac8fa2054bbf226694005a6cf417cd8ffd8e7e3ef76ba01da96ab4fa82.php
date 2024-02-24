@@ -61,7 +61,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
     ";
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 24
+        // line 26
         echo "
 
 </head>
@@ -70,23 +70,23 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
 <!-- ======= Header ======= -->
 ";
-        // line 31
+        // line 33
         $this->displayBlock('header', $context, $blocks);
-        // line 458
+        // line 467
         echo "
 
 <!-- End Header -->
 
 <!-- ======= Sidebar ======= -->
 ";
-        // line 463
+        // line 472
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 465
+        // line 474
         echo "
 ";
-        // line 466
+        // line 475
         $this->displayBlock('main', $context, $blocks);
-        // line 483
+        // line 492
         echo "
 
 <a href=\"#\" class=\"back-to-top d-flex align-items-center justify-content-center\"><i class=\"bi bi-arrow-up-short\"></i></a>
@@ -94,16 +94,16 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 <!-- Vendor JS Files -->
 
 <script src=\"";
-        // line 489
+        // line 498
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/trainingvideos/vendor/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 490
+        // line 499
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/trainingvideos/vendor/swiper/swiper-bundle.min.js"), "html", null, true);
         echo "\"></script>
 <!-- Template Main JS File -->
 <script src=\"";
-        // line 492
+        // line 501
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/trainingvideos/js/main.js"), "html", null, true);
         echo "\"></script>
 <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -156,12 +156,14 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/trainingvideos/vendor/bootstrap-icons/bootstrap-icons.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+
         <link href=\"";
-        // line 20
+        // line 22
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/trainingvideos/css/style.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
-        // line 21
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/trainingvideos/vendor/swiper/swiper-bundle.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
@@ -171,25 +173,50 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
     }
 
-    // line 31
+    // line 33
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 32
+        // line 34
         echo "<header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
 
+
     ";
+        // line 37
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "session", [], "any", false, false, false, 37), "has", ["cart"], "method", false, false, false, 37)) {
+            // line 38
+            echo "        ";
+            $context["cart"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "session", [], "any", false, false, false, 38), "get", ["cart"], "method", false, false, false, 38);
+            // line 39
+            echo "    ";
+        }
         // line 40
-        echo "<!-- End Logo -->
+        echo "    ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "session", [], "any", false, false, false, 40), "has", ["what-new-title"], "method", false, false, false, 40)) {
+            // line 41
+            echo "        ";
+            $context["title"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "session", [], "any", false, false, false, 41), "get", ["what-new-title"], "method", false, false, false, 41);
+            // line 42
+            echo "    ";
+        } else {
+            // line 43
+            echo "        ";
+            $context["title"] = "";
+            // line 44
+            echo "    ";
+        }
+        // line 45
+        echo "
+
 
 
 
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">
-        <a class=\"navbar-brand\" href=\"";
-        // line 45
+        <a class=\"navbar-brand\" href=\" ";
+        // line 51
         echo "\">
             <img src=\"https://img.exclusivebooks.co.za/logo/eb-logo-white.png\" width=\"30\" height=\"30\"
                  class=\"d-inline-block align-top\" alt=\"EB\" title=\"Exclusive Books\">
@@ -213,68 +240,68 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                         <div class=\"dropdown-header\">Vouchers &amp; Gift Cards</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 67
+        // line 73
         echo "\">Voucher Lookup</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 68
+        // line 74
         echo "\">Gift Card Lookup</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 69
+        // line 75
         echo "\">Send Voucher mail </a>
-                        <div class=\"dropdown-divider\"></div>
+                        <div class=\"dropdown-divider\"> </div>
                         <div class=\"dropdown-header\">Discount Coupons</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 72
+        // line 78
         echo "\">Lookup</a>
                         <!--
                     <div class=\"dropdown-divider\"></div>
                     <div class=\"dropdown-header\">Pre Order Vouchers</div>
                     <a class=\"dropdown-item\" href=\"";
-        // line 76
+        // line 82
         echo "\">Generate Voucher</a>
                     <a class=\"dropdown-item\" href=\"";
-        // line 77
+        // line 83
         echo "\">Lookup Voucher</a>
                     -->
 
 
                         <div class=\"dropdown-divider\"></div>
                         ";
-        // line 82
+        // line 88
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_IBST_REPORT")) {
-            // line 83
+            // line 89
             echo "                            <div class=\"dropdown-header\">Voucher & Gift administration</div>
 
                             <a class=\"dropdown-item\" href=\"";
-            // line 85
+            // line 91
             echo "\">Link Voucher to Gift  card</a>
                         ";
         }
-        // line 87
+        // line 93
         echo "                        ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ONLINE_ADMIN")) {
-            // line 88
+            // line 94
             echo "                            <a class=\"dropdown-item\" href=\"";
             echo "\">Lookup Change Voucher</a>
                             ";
-            // line 90
+            // line 96
             echo "                        ";
         }
-        // line 91
+        // line 97
         echo "
 
                         ";
-        // line 93
+        // line 99
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ONLINE_ADMIN")) {
-            // line 94
+            // line 100
             echo "                            <div class=\"dropdown-divider\"></div>
                             <div class=\"dropdown-header\">Online Order administration</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 96
+            // line 102
             echo "\">Reverse Online Refund</a>
                         ";
         }
-        // line 98
+        // line 104
         echo "                    </div>
                 </li>
 
@@ -286,38 +313,38 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"dashDropdown\">
                         <div class=\"dropdown-header\">Dashboards</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 108
+        // line 114
         echo "\">Potentially Delayed Orders Dashboard</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 109
+        // line 115
         echo "\">Overdue Orders Dashboard</a>
                         ";
-        // line 111
+        // line 117
         echo "                        <a class=\"dropdown-item\" href=\"";
         echo "\">Overdue Dropship Dashboard</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 112
+        // line 118
         echo "\">Overdue IBST Dashboard</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 113
+        // line 119
         echo "\">Online Refunds Dashboard</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Manage Orders</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 116
+        // line 122
         echo "\">Reverse Online Refund</a>
                         ";
-        // line 118
+        // line 124
         echo "                        <a class=\"dropdown-item\" href=\"";
         echo "\">Reinstate voided order</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 119
+        // line 125
         echo "\">Subtract Delivery from Refund</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 120
+        // line 126
         echo "\">Change Refund Type</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 121
+        // line 127
         echo "\">Change Payment Type</a>
                     </div>
                 </li>
@@ -331,57 +358,57 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\">
                         <div class=\"dropdown-header\">IBSTs</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 133
+        // line 139
         echo "\">Dashboard</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 134
+        // line 140
         echo "\">Lookup</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 135
+        // line 141
         echo "\">New Request</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 136
+        // line 142
         echo "\">Dispatch</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 137
+        // line 143
         echo "\">Receive</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 138
+        // line 144
         echo "\">Return to
                             Store</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 140
+        // line 146
         echo "\">Receive Returned
                             IBST</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 142
+        // line 148
         echo "\">Manage Declines</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Shipping</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 145
+        // line 151
         echo "\">Print Convergex Waybill</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 146
-        echo "\">Create Manifest</a>
+        // line 152
+        echo "\"> Create Manifest</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Bulk IBSTs</div>
                         ";
-        // line 149
+        // line 155
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_BULK_IBST")) {
-            // line 150
+            // line 156
             echo "                            <a class=\"dropdown-item\" href=\"";
             echo "\">Upload Bulk IBST</a>
                         ";
         }
-        // line 152
+        // line 158
         echo "                        <!---
                     <a class=\"dropdown-item\" href=\"";
-        // line 153
+        // line 159
         echo "\">Recall
                         Aged Stock</a>---->
                         <a class=\"dropdown-item\" href=\"";
-        // line 155
+        // line 161
         echo "\">Recall
                             Sales Stock</a>
                     </div>
@@ -395,63 +422,63 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"customerDropdown\">
                         <div class=\"dropdown-header\">Fanatics</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 167
+        // line 173
         echo "\">Search</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 168
+        // line 174
         echo "\">Activation</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Website Orders</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 171
+        // line 177
         echo "\">Order Lookup</a>
                         ";
-        // line 172
+        // line 178
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 173
+            // line 179
             echo "                            <a class=\"dropdown-item\" href=\"";
             echo "\">Receive
                                 Online
                                 Parcel</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 176
+            // line 182
             echo "\">Log
                                 Customer
                                 Collection</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 179
+            // line 185
             echo "\">Send Customer SMS</a>
                         ";
         }
-        // line 181
+        // line 187
         echo "                        ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ONLINE_ADMIN")) {
-            // line 182
+            // line 188
             echo "                            <a class=\"dropdown-item\" href=\"";
             echo "\">Reset Dropshipping Order</a>
                         ";
         }
-        // line 184
+        // line 190
         echo "                        <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Book Clubs</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 186
+        // line 192
         echo "\">Search</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Customers</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 189
+        // line 195
         echo "\">View Account List</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 190
+        // line 196
         echo "\">Lookup Store Receipt</a>
                     </div>
                 </li>
 
                 ";
-        // line 194
+        // line 200
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_DROP_SHIP")) {
-            // line 195
+            // line 201
             echo "                    <li class=\"nav-item dropdown\">
                         <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" id=\"dropShippingDropdown\" data-bs-toggle=\"dropdown\">
                             <span class=\"d-none d-md-block dropdown-toggle ps-2\">Drop Shipping</span>
@@ -459,48 +486,48 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"dropShippingDropdown\">
                             <div class=\"dropdown-header\">Drop Shipping</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 201
+            // line 207
             echo "\">Dashboard</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 202
+            // line 208
             echo "\">Picking Slip Lookup</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 203
+            // line 209
             echo "\">Dispatch Online
                                 Order</a>
                             <div class=\"dropdown-divider\"></div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 206
+            // line 212
             echo "\">Create Manifest</a>
 
                             ";
-            // line 208
+            // line 214
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_PROCURE")) {
-                // line 209
+                // line 215
                 echo "                                <div class=\"dropdown-divider\"></div>
                                 <div class=\"dropdown-header\">Rohan</div>
                                 <a class=\"dropdown-item\" href=\"";
-                // line 211
+                // line 217
                 echo "\">View Legacy Picking
                                     Slip</a>
                                 <a class=\"dropdown-item\" href=\"";
-                // line 213
+                // line 219
                 echo "\">Open Gift Orders</a>
                             ";
             }
-            // line 215
+            // line 221
             echo "                        </div>
                     </li>
                 ";
         }
-        // line 218
+        // line 224
         echo "
 
                 <!-- #QOUTATION TABS -->
                 ";
-        // line 221
+        // line 227
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 222
+            // line 228
             echo "
                     <li class=\"nav-item dropdown\">
                         <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" id=\"dropShippingDropdown\" data-bs-toggle=\"dropdown\">
@@ -511,10 +538,10 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"dropShippingDropdown\">
                             <div class=\"dropdown-header\">Quotation</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 231
+            // line 237
             echo "\">Create Quotation</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 232
+            // line 238
             echo "\">View Quotation</a>
 
                         </div>
@@ -522,13 +549,13 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                 ";
         }
-        // line 238
+        // line 244
         echo "
 
                 ";
-        // line 240
+        // line 246
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_IBST_REPORT")) {
-            // line 241
+            // line 247
             echo "                    <li class=\"nav-item dropdown\">
                         <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" id=\"ibstReportsDropdown\" data-bs-toggle=\"dropdown\">
                             <span class=\"d-none d-md-block dropdown-toggle ps-2\">Reports</span>
@@ -536,25 +563,25 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"ibstReportsDropdown\">
                             <div class=\"dropdown-header\">IBSTs</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 247
+            // line 253
             echo "\">IBST
                                 Summary Report</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 249
+            // line 255
             echo "\">IBST
                                 Manifest Report</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 251
+            // line 257
             echo "\">IBST
                                 Detail Report</a>
                             <div class=\"dropdown-divider\"></div>
                             <div class=\"dropdown-header\">Goods in Transit</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 255
+            // line 261
             echo "\">Goods In
                                 Transit Listing</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 257
+            // line 263
             echo "\">G-I-T
                                 Summary Report</a>
 
@@ -569,32 +596,32 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                             <div class=\"dropdown-divider\"></div>
                             <div class=\"dropdown-header\">Online Reports</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 270
+            // line 276
             echo "\">Drop Shipping
                                 Summary Report</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 272
+            // line 278
             echo "\">Dispatch Stats
                                 Report</a>
                             <div class=\"dropdown-divider\"></div>
                             <div class=\"dropdown-header\">Foot Count</div>
 
                             <a class=\"dropdown-item\" href=\"";
-            // line 277
+            // line 283
             echo "\">Store Foot Count
                                 Report</a>
                             <div class=\"dropdown-divider\"></div>
                             <!--";
-            // line 287
+            // line 293
             echo " -->
 
                             <div class=\"dropdown-header\">Store  Audit Checklist</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 290
+            // line 296
             echo "\">Audit Checklist  Dashboard
                             </a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 292
+            // line 298
             echo "\">Add new Store audit
                             </a>
 
@@ -602,12 +629,12 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     </li>
                 ";
         }
-        // line 298
+        // line 304
         echo "
                 ";
-        // line 299
+        // line 305
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CMS")) {
-            // line 300
+            // line 306
             echo "                    <li class=\"nav-item dropdown\">
                         <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" id=\"cmsDropdown\" data-bs-toggle=\"dropdown\">
                             <span class=\"d-none d-md-block dropdown-toggle ps-2\">CMS</span>
@@ -615,24 +642,24 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"cmsDropdown\">
                             <div class=\"dropdown-header\">Content Management</div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 306
+            // line 312
             echo "\">Campaign Upload</a>
                             <a class=\"dropdown-item\" href=\"";
-            // line 307
+            // line 313
             echo "\">Campaign Management</a>
                             <div class=\"dropdown-divider\"></div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 309
+            // line 315
             echo "\">Add Product</a>
                         </div>
                     </li>
                 ";
         }
-        // line 313
+        // line 319
         echo "
                 <li>
                     <a class=\"nav-link\" href=\"";
-        // line 315
+        // line 321
         echo "\">Whats New</a>
                 </li>
 
@@ -649,7 +676,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                         <li>
                             <a class=\"dropdown-item d-flex align-items-center\" href=\"";
-        // line 330
+        // line 336
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_index");
         echo "\">
                                 <span>Show video</span>
@@ -662,7 +689,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                         <li>
                             <a class=\"dropdown-item d-flex align-items-center\" href=\"";
-        // line 340
+        // line 346
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("video_app_category_new");
         echo "\">
                                 <span>Add Actergory</span>
@@ -673,7 +700,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         </li>
                         <li>
                             <a class=\"dropdown-item d-flex align-items-center\" href=\"";
-        // line 348
+        // line 354
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_video_new");
         echo "\">
                                 <span>Form</span>
@@ -687,7 +714,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                 <li>
 
                     <a href=\"";
-        // line 359
+        // line 365
         echo "\"><span class=\"nav-link\" style=\"color:white; font-weight: bold\"><strong>";
         echo "</strong></span></a>
                 </li>
@@ -695,32 +722,34 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
 
 
-            <ul class=\"navbar-nav\">
+            <ul class=\"navbar-nav ms-auto pe-3\">
                 <li class=\"nav-item dropdown\" data-toggle=\"popover\" data-content=\"Catalogue Search\" data-trigger=\"hover\"
                     data-placement=\"bottom\">
                     <a class=\"nav-link\" href=\"";
-        // line 368
+        // line 374
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("input_search");
         echo "\">
                         <span class=\"fa fa-search\"></span>
                     </a>
                 </li>
                 ";
-        // line 372
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 372, $this->source); })()), "session", [], "any", false, false, false, 372), "has", ["storeCode"], "method", false, false, false, 372)) {
-            // line 373
+        // line 378
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 378, $this->source); })()), "session", [], "any", false, false, false, 378), "has", ["storeCode"], "method", false, false, false, 378)) {
+            // line 379
             echo "                    <li class=\"nav-item dropdown\" data-toggle=\"popover\" data-content=\"IBST Cart Items\" data-trigger=\"hover\"
                         data-placement=\"bottom\">
                         <a class=\"nav-link\" href=\"";
-            // line 375
+            // line 381
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ibst_review", ["store" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 381, $this->source); })()), "session", [], "any", false, false, false, 381), "get", ["storeCode"], "method", false, false, false, 381)]), "html", null, true);
             echo "\">
                             <span class=\"fa fa-shopping-cart\"></span>
                             <sub>
                         <span id=\"shoppingcartQty\"
                               class=\"badge";
-            // line 379
-            if (((isset($context["cart"]) || array_key_exists("cart", $context)) && (1 === twig_compare(twig_length_filter($this->env, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 379, $this->source); })())), 0)))) {
+            // line 385
+            if (((isset($context["cart"]) || array_key_exists("cart", $context)) && (1 === twig_compare(twig_length_filter($this->env, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 385, $this->source); })())), 0)))) {
                 echo " badge-success\">";
-                echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 379, $this->source); })())), "html", null, true);
+                echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 385, $this->source); })())), "html", null, true);
             } else {
                 echo " badge-secondary\">0";
             }
@@ -730,32 +759,37 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     </li>
                 ";
         }
-        // line 384
+        // line 390
         echo "
                 <li class=\"nav-item dropdown\" data-toggle=\"popover\" data-content=\"Help &amp; Reference\" data-trigger=\"hover\"
                     data-placement=\"bottom\">
 
                     <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\" id=\"navbarDropdown\">
-                        <span class=\"d-none d-md-block dropdown-toggle ps-2\">Help &amp; Reference</span><span class=\"fa fa-question-circle\"></span>
+                        <span class=\"sr-only\">Help &amp; Reference</span><span class=\"fa fa-question-circle\"></span>
                     </a>
 
                     <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"navbarDropdown\">
                         <div class=\"dropdown-header\">Reference</div>
                         <a class=\"dropdown-item\" href=\"";
-        // line 394
+        // line 400
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reference_documents");
         echo "\">Guides &amp; Manuals</a>
 
                         <a class=\"dropdown-item\" href=\"";
-        // line 396
+        // line 402
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("employee_list");
         echo "\">Employee list</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 397
+        // line 403
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reference_store_list");
         echo "\">Store List</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 398
+        // line 404
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reference_contact_list");
         echo "\">Contact List</a>
                         <a class=\"dropdown-item\" href=\"";
-        // line 399
+        // line 405
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reference_links");
         echo "\">Useful Links</a>
 
                         <div class=\"dropdown-header\">Support</div>
@@ -772,19 +806,19 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                 </li>
 
                 ";
-        // line 414
+        // line 420
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 415
+            // line 421
             echo "                    <li class=\"nav-item dropdown\">
 
 
                         <a class=\"nav-link  d-flex align-items-center pe-0\" id=\"authDropdown\" href=\"#\" data-bs-toggle=\"dropdown\">
                             <span class=\"d-none d-md-block dropdown-toggle ps-2\"><span
                                         style=\"font-size: smaller\">";
-            // line 420
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 420, $this->source); })()), "session", [], "any", false, false, false, 420), "get", ["userName"], "method", false, false, false, 420), "html", null, true);
+            // line 426
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 426, $this->source); })()), "session", [], "any", false, false, false, 426), "get", ["userName"], "method", false, false, false, 426), "html", null, true);
             echo "<br/>(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 420, $this->source); })()), "session", [], "any", false, false, false, 420), "get", ["storeName"], "method", false, false, false, 420), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 426, $this->source); })()), "session", [], "any", false, false, false, 426), "get", ["storeName"], "method", false, false, false, 426), "html", null, true);
             echo ")</span>
                             <span
                                     class=\"fa fa-user\"></span></span>
@@ -794,10 +828,10 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\">
                             <span class=\"d-none d-md-block ps-2\"><span
                                         style=\"font-size: smaller\">";
-            // line 428
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 428, $this->source); })()), "session", [], "any", false, false, false, 428), "get", ["userName"], "method", false, false, false, 428), "html", null, true);
+            // line 434
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 434, $this->source); })()), "session", [], "any", false, false, false, 434), "get", ["userName"], "method", false, false, false, 434), "html", null, true);
             echo "<br/>(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 428, $this->source); })()), "session", [], "any", false, false, false, 428), "get", ["storeName"], "method", false, false, false, 428), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 434, $this->source); })()), "session", [], "any", false, false, false, 434), "get", ["storeName"], "method", false, false, false, 434), "html", null, true);
             echo ")</span>
                             <span
                                     class=\"fa fa-user\"></span></span>
@@ -806,42 +840,50 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                         <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"authDropdown\">
                             <a class=\"dropdown-item\" href=\"";
-            // line 435
+            // line 441
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_change_store_list");
             echo "\">Change Store</a>
                             <div class=\"dropdown-divider\"></div>
                             <a class=\"dropdown-item\" href=\"";
-            // line 437
+            // line 443
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\">Log out</a>
                             ";
-            // line 438
+            // line 444
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_SU")) {
-                // line 439
+                // line 445
                 echo "                                <div class=\"dropdown-divider\"></div>
                                 <a class=\"dropdown-item\" href=\"";
-                // line 440
+                // line 446
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_etl_dashboard");
                 echo "\">Job Dashboard</a>
                                 <a class=\"dropdown-item\" href=\"";
-                // line 441
+                // line 447
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_sales_dashboard");
                 echo "\">Sales summary</a>
                             ";
             }
-            // line 443
+            // line 449
             echo "                        </div>
 
 
                     </li>
                 ";
         } else {
-            // line 448
+            // line 454
             echo "                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
-            // line 449
+                        <a class=\"nav-link\" href=\" ";
+            // line 455
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
             echo "\">Log in</a>
                     </li>
                 ";
         }
-        // line 452
+        // line 458
         echo "            </ul>
+
+
+
         </div>
     </nav>
 
@@ -852,7 +894,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
     }
 
-    // line 463
+    // line 472
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -864,14 +906,14 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
     }
 
-    // line 466
+    // line 475
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 467
+        // line 476
         echo "
 <main id=\"main\" class=\"main\">
 
@@ -880,9 +922,9 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
     <section class=\"section dashboard\">
         ";
-        // line 474
+        // line 483
         $this->displayBlock('main_section', $context, $blocks);
-        // line 479
+        // line 488
         echo "    </section>
 
 </main><!-- End #main -->
@@ -892,14 +934,14 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
     }
 
-    // line 474
+    // line 483
     public function block_main_section($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main_section"));
 
-        // line 475
+        // line 484
         echo "            <div class=\"row\">
 
             </div>
@@ -930,7 +972,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
      */
     public function getDebugInfo()
     {
-        return array (  903 => 475,  896 => 474,  886 => 479,  884 => 474,  875 => 467,  868 => 466,  856 => 463,  844 => 452,  839 => 449,  836 => 448,  829 => 443,  825 => 441,  822 => 440,  819 => 439,  817 => 438,  814 => 437,  810 => 435,  798 => 428,  785 => 420,  778 => 415,  776 => 414,  759 => 399,  756 => 398,  753 => 397,  750 => 396,  746 => 394,  734 => 384,  721 => 379,  715 => 375,  711 => 373,  709 => 372,  703 => 368,  691 => 359,  677 => 348,  666 => 340,  653 => 330,  636 => 315,  632 => 313,  626 => 309,  622 => 307,  619 => 306,  611 => 300,  609 => 299,  606 => 298,  598 => 292,  594 => 290,  589 => 287,  584 => 277,  577 => 272,  573 => 270,  558 => 257,  554 => 255,  548 => 251,  544 => 249,  540 => 247,  532 => 241,  530 => 240,  526 => 238,  518 => 232,  515 => 231,  504 => 222,  502 => 221,  497 => 218,  492 => 215,  488 => 213,  484 => 211,  480 => 209,  478 => 208,  474 => 206,  469 => 203,  466 => 202,  463 => 201,  455 => 195,  453 => 194,  447 => 190,  444 => 189,  439 => 186,  435 => 184,  430 => 182,  427 => 181,  423 => 179,  418 => 176,  412 => 173,  410 => 172,  407 => 171,  402 => 168,  399 => 167,  385 => 155,  381 => 153,  378 => 152,  373 => 150,  371 => 149,  366 => 146,  363 => 145,  358 => 142,  354 => 140,  350 => 138,  347 => 137,  344 => 136,  341 => 135,  338 => 134,  335 => 133,  321 => 121,  318 => 120,  315 => 119,  311 => 118,  308 => 116,  303 => 113,  300 => 112,  296 => 111,  293 => 109,  290 => 108,  278 => 98,  274 => 96,  270 => 94,  268 => 93,  264 => 91,  261 => 90,  257 => 88,  254 => 87,  250 => 85,  246 => 83,  244 => 82,  237 => 77,  234 => 76,  228 => 72,  223 => 69,  220 => 68,  217 => 67,  193 => 45,  186 => 40,  182 => 32,  175 => 31,  165 => 21,  161 => 20,  156 => 18,  152 => 17,  147 => 14,  140 => 13,  127 => 8,  107 => 492,  102 => 490,  98 => 489,  90 => 483,  88 => 466,  85 => 465,  83 => 463,  76 => 458,  74 => 31,  65 => 24,  63 => 13,  55 => 8,  46 => 1,);
+        return array (  945 => 484,  938 => 483,  928 => 488,  926 => 483,  917 => 476,  910 => 475,  898 => 472,  883 => 458,  877 => 455,  874 => 454,  867 => 449,  862 => 447,  858 => 446,  855 => 445,  853 => 444,  849 => 443,  844 => 441,  832 => 434,  819 => 426,  812 => 421,  810 => 420,  792 => 405,  788 => 404,  784 => 403,  780 => 402,  775 => 400,  763 => 390,  750 => 385,  743 => 381,  739 => 379,  737 => 378,  730 => 374,  718 => 365,  704 => 354,  693 => 346,  680 => 336,  663 => 321,  659 => 319,  653 => 315,  649 => 313,  646 => 312,  638 => 306,  636 => 305,  633 => 304,  625 => 298,  621 => 296,  616 => 293,  611 => 283,  604 => 278,  600 => 276,  585 => 263,  581 => 261,  575 => 257,  571 => 255,  567 => 253,  559 => 247,  557 => 246,  553 => 244,  545 => 238,  542 => 237,  531 => 228,  529 => 227,  524 => 224,  519 => 221,  515 => 219,  511 => 217,  507 => 215,  505 => 214,  501 => 212,  496 => 209,  493 => 208,  490 => 207,  482 => 201,  480 => 200,  474 => 196,  471 => 195,  466 => 192,  462 => 190,  457 => 188,  454 => 187,  450 => 185,  445 => 182,  439 => 179,  437 => 178,  434 => 177,  429 => 174,  426 => 173,  412 => 161,  408 => 159,  405 => 158,  400 => 156,  398 => 155,  393 => 152,  390 => 151,  385 => 148,  381 => 146,  377 => 144,  374 => 143,  371 => 142,  368 => 141,  365 => 140,  362 => 139,  348 => 127,  345 => 126,  342 => 125,  338 => 124,  335 => 122,  330 => 119,  327 => 118,  323 => 117,  320 => 115,  317 => 114,  305 => 104,  301 => 102,  297 => 100,  295 => 99,  291 => 97,  288 => 96,  284 => 94,  281 => 93,  277 => 91,  273 => 89,  271 => 88,  264 => 83,  261 => 82,  255 => 78,  250 => 75,  247 => 74,  244 => 73,  220 => 51,  212 => 45,  209 => 44,  206 => 43,  203 => 42,  200 => 41,  197 => 40,  194 => 39,  191 => 38,  189 => 37,  184 => 34,  177 => 33,  167 => 23,  163 => 22,  156 => 18,  152 => 17,  147 => 14,  140 => 13,  127 => 8,  107 => 501,  102 => 499,  98 => 498,  90 => 492,  88 => 475,  85 => 474,  83 => 472,  76 => 467,  74 => 33,  65 => 26,  63 => 13,  55 => 8,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -954,6 +996,8 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
         <link href=\"{{ asset(\"assets/trainingvideos/vendor/bootstrap/css/bootstrap.min.css\") }}\" rel=\"stylesheet\">
         <link href=\"{{ asset(\"assets/trainingvideos/vendor/bootstrap-icons/bootstrap-icons.css\") }}\" rel=\"stylesheet\">
 
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+
         <link href=\"{{ asset(\"assets/trainingvideos/css/style.css\") }}\" rel=\"stylesheet\">
         <link href=\"{{  asset ('assets/trainingvideos/vendor/swiper/swiper-bundle.min.css') }}\" rel=\"stylesheet\">
 
@@ -968,18 +1012,22 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 {% block header %}
 <header id=\"header\" class=\"header fixed-top d-flex align-items-center\">
 
-    {# <div class=\"d-flex align-items-center justify-content-between\">
-        <a href=\"\" class=\"logo d-flex align-items-center\">
-            <span class=\"d-none d-lg-block ms-2\">Chiron</span>
-        </a>
-        <i class=\"bi bi-list toggle-sidebar-btn\"></i>
 
-    </div> #}<!-- End Logo -->
+    {% if app.session.has('cart') %}
+        {% set cart = app.session.get('cart') %}
+    {% endif %}
+    {% if app.session.has('what-new-title') %}
+        {% set title = app.session.get('what-new-title') %}
+    {%  else %}
+        {% set title =\"\" %}
+    {% endif %}
+
+
 
 
 
     <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">
-        <a class=\"navbar-brand\" href=\"{# {{ path('home') }} #}\">
+        <a class=\"navbar-brand\" href=\" {#{{ path('home') }} #}\">
             <img src=\"https://img.exclusivebooks.co.za/logo/eb-logo-white.png\" width=\"30\" height=\"30\"
                  class=\"d-inline-block align-top\" alt=\"EB\" title=\"Exclusive Books\">
             Chiron
@@ -1002,11 +1050,11 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                         <div class=\"dropdown-header\">Vouchers &amp; Gift Cards</div>
                         <a class=\"dropdown-item\" href=\"{# {{ path('voucher_lookup') }} #}\">Voucher Lookup</a>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('gift_card_lookup') }}#}\">Gift Card Lookup</a>
+                        <a class=\"dropdown-item\" href=\"{#{{ path('gift_card_lookup') }} #}\">Gift Card Lookup</a>
                         <a class=\"dropdown-item\" href=\"{#{{ path('gift_card_lookup') }}#}\">Send Voucher mail </a>
-                        <div class=\"dropdown-divider\"></div>
+                        <div class=\"dropdown-divider\"> </div>
                         <div class=\"dropdown-header\">Discount Coupons</div>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('coupon_lookup') }}#}\">Lookup</a>
+                        <a class=\"dropdown-item\" href=\"{#{{ path('coupon_lookup') }} #}\">Lookup</a>
                         <!--
                     <div class=\"dropdown-divider\"></div>
                     <div class=\"dropdown-header\">Pre Order Vouchers</div>
@@ -1019,10 +1067,10 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         {% if is_granted('ROLE_IBST_REPORT') %}
                             <div class=\"dropdown-header\">Voucher & Gift administration</div>
 
-                            <a class=\"dropdown-item\" href=\"{#{{ path('linkVoucherToGift') }}#}\">Link Voucher to Gift  card</a>
+                            <a class=\"dropdown-item\" href=\"{#{{ path('linkVoucherToGift') }} #}\">Link Voucher to Gift  card</a>
                         {% endif %}
                         {% if is_granted('ROLE_ONLINE_ADMIN') %}
-                            <a class=\"dropdown-item\" href=\"{#{{ path('LookupChangeVoucher') }}#}\">Lookup Change Voucher</a>
+                            <a class=\"dropdown-item\" href=\"{#{{ path('LookupChangeVoucher') }} #}\">Lookup Change Voucher</a>
                             {#   <a class=\"dropdown-item\" href=\"{{ path('VoucherStatusReset') }}\">Voucher Lookup  by  Receipt</a> #}
                         {% endif %}
 
@@ -1030,7 +1078,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         {% if is_granted('ROLE_ONLINE_ADMIN') %}
                             <div class=\"dropdown-divider\"></div>
                             <div class=\"dropdown-header\">Online Order administration</div>
-                            <a class=\"dropdown-item\" href=\"{#{{ path('ReverseOnlineRefund') }}#}\">Reverse Online Refund</a>
+                            <a class=\"dropdown-item\" href=\"{#{{ path('ReverseOnlineRefund') }} #}\">Reverse Online Refund</a>
                         {% endif %}
                     </div>
                 </li>
@@ -1042,15 +1090,15 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
                     <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"dashDropdown\">
                         <div class=\"dropdown-header\">Dashboards</div>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('View_Delayed_Orders') }}#}\">Potentially Delayed Orders Dashboard</a>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('View_Overdue_Orders') }}#}\">Overdue Orders Dashboard</a>
+                        <a class=\"dropdown-item\" href=\"{#{{ path('View_Delayed_Orders') }} #}\">Potentially Delayed Orders Dashboard</a>
+                        <a class=\"dropdown-item\" href=\"{#{{ path('View_Overdue_Orders') }} #}\">Overdue Orders Dashboard</a>
                         {# <a class=\"dropdown-item\" href=\"{{ path('ExportVoucherList') }}\">Export Corporate Order Voucher List</a> #}
                         <a class=\"dropdown-item\" href=\"{#{{ path('View_Overdue_Dropship') }} #}\">Overdue Dropship Dashboard</a>
                         <a class=\"dropdown-item\" href=\"{#{{ path('View_Overdue_IBST') }} #}\">Overdue IBST Dashboard</a>
                         <a class=\"dropdown-item\" href=\"{#{{ path('ViewRefunds') }} #}\">Online Refunds Dashboard</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Manage Orders</div>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('ReverseOnlineRefund') }} #}\">Reverse Online Refund</a>
+                        <a class=\"dropdown-item\" href=\"{# path('ReverseOnlineRefund') }} #}\">Reverse Online Refund</a>
                         {# <a class=\"dropdown-item\" href=\"{{ path('Reset_dropship_line') }} \">Reset Dropship Order Line</a> #}
                         <a class=\"dropdown-item\" href=\"{#{{ path('ReinstateVoidedOrder') }} #}\">Reinstate voided order</a>
                         <a class=\"dropdown-item\" href=\"{#{{ path('MinusDelivery') }} #}\">Subtract Delivery from Refund</a>
@@ -1080,7 +1128,7 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Shipping</div>
                         <a class=\"dropdown-item\" href=\"{#{{ url('convergex_waybill_print') }} #}\">Print Convergex Waybill</a>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('drop_shipping_show_manifest') }} #}\">Create Manifest</a>
+                        <a class=\"dropdown-item\" href=\"{#{{ path('drop_shipping_show_manifest')}} #}\"> Create Manifest</a>
                         <div class=\"dropdown-divider\"></div>
                         <div class=\"dropdown-header\">Bulk IBSTs</div>
                         {% if is_granted('ROLE_BULK_IBST') %}
@@ -1299,17 +1347,17 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
 
 
-            <ul class=\"navbar-nav\">
+            <ul class=\"navbar-nav ms-auto pe-3\">
                 <li class=\"nav-item dropdown\" data-toggle=\"popover\" data-content=\"Catalogue Search\" data-trigger=\"hover\"
                     data-placement=\"bottom\">
-                    <a class=\"nav-link\" href=\"{#{{ url('input_search') }}#}\">
+                    <a class=\"nav-link\" href=\"{{ url('input_search') }}\">
                         <span class=\"fa fa-search\"></span>
                     </a>
                 </li>
                 {% if app.session.has('storeCode') %}
                     <li class=\"nav-item dropdown\" data-toggle=\"popover\" data-content=\"IBST Cart Items\" data-trigger=\"hover\"
                         data-placement=\"bottom\">
-                        <a class=\"nav-link\" href=\"{#{{ path('ibst_review', {'store': app.session.get('storeCode')}) }}#}\">
+                        <a class=\"nav-link\" href=\"{{ path('ibst_review', {'store': app.session.get('storeCode')}) }}\">
                             <span class=\"fa fa-shopping-cart\"></span>
                             <sub>
                         <span id=\"shoppingcartQty\"
@@ -1323,17 +1371,17 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     data-placement=\"bottom\">
 
                     <a class=\"nav-link  d-flex align-items-center pe-0\" href=\"#\" data-bs-toggle=\"dropdown\" id=\"navbarDropdown\">
-                        <span class=\"d-none d-md-block dropdown-toggle ps-2\">Help &amp; Reference</span><span class=\"fa fa-question-circle\"></span>
+                        <span class=\"sr-only\">Help &amp; Reference</span><span class=\"fa fa-question-circle\"></span>
                     </a>
 
                     <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"navbarDropdown\">
                         <div class=\"dropdown-header\">Reference</div>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('reference_documents') }}#}\">Guides &amp; Manuals</a>
+                        <a class=\"dropdown-item\" href=\"{{ path('reference_documents') }}\">Guides &amp; Manuals</a>
 
-                        <a class=\"dropdown-item\" href=\"{#{{ url('employee_list') }}#}\">Employee list</a>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('reference_store_list') }}#}\">Store List</a>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('reference_contact_list') }}#}\">Contact List</a>
-                        <a class=\"dropdown-item\" href=\"{#{{ path('reference_links') }}#}\">Useful Links</a>
+                        <a class=\"dropdown-item\" href=\"{{ url('employee_list') }}\">Employee list</a>
+                        <a class=\"dropdown-item\" href=\"{{ path('reference_store_list') }}\">Store List</a>
+                        <a class=\"dropdown-item\" href=\"{{ path('reference_contact_list') }}\">Contact List</a>
+                        <a class=\"dropdown-item\" href=\"{{ path('reference_links') }}\">Useful Links</a>
 
                         <div class=\"dropdown-header\">Support</div>
                         <a class=\"dropdown-item\" href=\"http://itsupport.exclusivebooks.co.za\" target=\"_blank\">IT Support
@@ -1369,13 +1417,13 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
 
 
                         <div class=\"dropdown-menu dropdown-menu-end dropdown-menu-arrow\" aria-labelledby=\"authDropdown\">
-                            <a class=\"dropdown-item\" href=\"{#{{ path('app_change_store_list') }}#}\">Change Store</a>
+                            <a class=\"dropdown-item\" href=\"{{ path('app_change_store_list') }}\">Change Store</a>
                             <div class=\"dropdown-divider\"></div>
-                            <a class=\"dropdown-item\" href=\"{#{{ path('logout' ) }}#}\">Log out</a>
+                            <a class=\"dropdown-item\" href=\"{{ path('logout' ) }}\">Log out</a>
                             {% if is_granted('ROLE_SU') %}
                                 <div class=\"dropdown-divider\"></div>
-                                <a class=\"dropdown-item\" href=\"{#{{ path('admin_etl_dashboard') }}#}\">Job Dashboard</a>
-                                <a class=\"dropdown-item\" href=\"{#{{ path('admin_sales_dashboard') }}#}\">Sales summary</a>
+                                <a class=\"dropdown-item\" href=\"{{ path('admin_etl_dashboard') }}\">Job Dashboard</a>
+                                <a class=\"dropdown-item\" href=\"{{ path('admin_sales_dashboard') }}\">Sales summary</a>
                             {% endif %}
                         </div>
 
@@ -1383,10 +1431,13 @@ class __TwigTemplate_2597d4537e281850944354d02171ca4eabed9403b373e05c950c9f9eae4
                     </li>
                 {% else %}
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{# {{ path('login') }}#}\">Log in</a>
+                        <a class=\"nav-link\" href=\" {{ path('login') }}\">Log in</a>
                     </li>
                 {% endif %}
             </ul>
+
+
+
         </div>
     </nav>
 

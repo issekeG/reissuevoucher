@@ -243,6 +243,7 @@
     </service>
     <service id="App\Form\reissuevoucher\VoucherTypeEdit" class="App\Form\reissuevoucher\VoucherTypeEdit" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+      <argument type="service" id="security.helper"/>
     </service>
     <service id="App\Form\trainingvideos\CategoryType" class="App\Form\trainingvideos\CategoryType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -4441,13 +4442,6 @@
         <argument key="voucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.2PEbKYl" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
-        <argument key="voucherRepository" type="service_closure" id="App\Repository\reissuevoucher\VoucherRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.Jqd_se5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4521,7 +4515,7 @@
         <argument key="videoRepository" type="service_closure" id="App\Repository\trainingvideos\VideoRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.eTh4acQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.cKRawxy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\reissuevoucher\RegistrationController::register" type="service_closure" id=".service_locator.4u5os03"/>
@@ -4529,7 +4523,7 @@
         <argument key="App\Controller\reissuevoucher\VoucherController::delete" type="service_closure" id=".service_locator.5pAjOGf"/>
         <argument key="App\Controller\reissuevoucher\VoucherController::edit" type="service_closure" id=".service_locator.5pAjOGf"/>
         <argument key="App\Controller\reissuevoucher\VoucherController::index" type="service_closure" id=".service_locator.qhJ5uJH"/>
-        <argument key="App\Controller\reissuevoucher\VoucherController::new" type="service_closure" id=".service_locator.2PEbKYl"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController::new" type="service_closure" id=".service_locator.qhJ5uJH"/>
         <argument key="App\Controller\reissuevoucher\VoucherController::search" type="service_closure" id=".service_locator.qhJ5uJH"/>
         <argument key="App\Controller\reissuevoucher\VoucherController::show" type="service_closure" id=".service_locator.Jqd_se5"/>
         <argument key="App\Controller\reissuevoucher\VoucherController::showShoesByStatus" type="service_closure" id=".service_locator.qhJ5uJH"/>
@@ -4556,7 +4550,7 @@
         <argument key="App\Controller\reissuevoucher\VoucherController:delete" type="service_closure" id=".service_locator.5pAjOGf"/>
         <argument key="App\Controller\reissuevoucher\VoucherController:edit" type="service_closure" id=".service_locator.5pAjOGf"/>
         <argument key="App\Controller\reissuevoucher\VoucherController:index" type="service_closure" id=".service_locator.qhJ5uJH"/>
-        <argument key="App\Controller\reissuevoucher\VoucherController:new" type="service_closure" id=".service_locator.2PEbKYl"/>
+        <argument key="App\Controller\reissuevoucher\VoucherController:new" type="service_closure" id=".service_locator.qhJ5uJH"/>
         <argument key="App\Controller\reissuevoucher\VoucherController:search" type="service_closure" id=".service_locator.qhJ5uJH"/>
         <argument key="App\Controller\reissuevoucher\VoucherController:show" type="service_closure" id=".service_locator.Jqd_se5"/>
         <argument key="App\Controller\reissuevoucher\VoucherController:showShoesByStatus" type="service_closure" id=".service_locator.qhJ5uJH"/>
@@ -4885,12 +4879,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.eTh4acQ"/>
+      <argument type="service" id=".service_locator.cKRawxy"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.eTh4acQ"/>
+      <argument type="service" id=".service_locator.cKRawxy"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5607,7 +5601,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.eTh4acQ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.cKRawxy"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -5616,11 +5610,10 @@
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.Dby0_1s" alias=".service_locator.4u5os03"/>
-    <service id=".service_locator.zpWkEIB" alias=".service_locator.2PEbKYl"/>
     <service id=".service_locator._uOuRFx" alias=".service_locator.fZ_fM5A"/>
     <service id=".service_locator.UpDOsjY" alias=".service_locator.pJUCJBw"/>
     <service id=".service_locator.X_hCLcH" alias=".service_locator._TEH.LM"/>
-    <service id=".service_locator.DAxJyGV" alias=".service_locator.eTh4acQ"/>
+    <service id=".service_locator.3UEQkJc" alias=".service_locator.cKRawxy"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.qrtIci2" alias=".service_locator.VH9WX8l"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
@@ -5645,7 +5638,6 @@
     <service id=".service_locator.LzwvCJx" alias=".service_locator.4u5os03"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>
     <service id=".service_locator.JwcOLJ." alias=".service_locator.qhJ5uJH"/>
-    <service id=".service_locator.QYJrFxw" alias=".service_locator.2PEbKYl"/>
     <service id=".service_locator.Tj4vYcd" alias=".service_locator.Jqd_se5"/>
     <service id=".service_locator..86TXVh" alias=".service_locator.5pAjOGf"/>
     <service id=".service_locator.xtfxoBp" alias=".service_locator.fZ_fM5A"/>

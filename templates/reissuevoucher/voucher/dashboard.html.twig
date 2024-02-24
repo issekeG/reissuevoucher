@@ -65,10 +65,9 @@
               <th scope="col">Value_Loaded_On_Card</th>
               <th scope="col">Further_Details</th>
               <th scope="col">Requested_By</th>
-              <th scope="col">Requested_By_Signature</th>
               <th scope="col">Requested_Date</th>
               <th scope="col">Authorized_By</th>
-              <th scope="col">Authorized_Signature</th>
+              <th scope="col">Sentout_by</th>
               <th scope="col">Authorized_Date</th>
               <th scope="col">New_Evoucher_Reference</th>
               <th scope="col">New_Evoucher_Date</th>
@@ -91,10 +90,9 @@
                 <td>{{ voucher.valueLoadedOnCard }}</td>
                 <td>{{ voucher.furtherDetails }}</td>
                 <td>{{ voucher.requestedBy }}</td>
-                <td>{{ voucher.requestedBySignature }}</td>
                 <td>{{ voucher.requestedDate ? voucher.requestedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ voucher.authorizedBy }}</td>
-                <td>{{ voucher.authorizedSignature }}</td>
+                <td>{{ voucher.sentOutBy }}</td>
                 <td>{{ voucher.authorizedDate ? voucher.authorizedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ voucher.newEvoucherReference }}</td>
                 <td>{{ voucher.newEvoucherDate ? voucher.newEvoucherDate|date('Y-m-d') : '' }}</td>
@@ -103,13 +101,14 @@
 
                 {% if 'approv' in voucher.status|lower %}
 
-                  <td><a href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"><span class="badge bg-success">{{ voucher.status }}</span></a></td>
+                <td><a {% if is_granted('ROLE_IBST_REPORT') %} href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"{% endif %}><span class="badge bg-success">{{ voucher.status }}</span></a></td>
+
                 {% elseif 'pend' in voucher.status|lower|lower %}
-                  <td><a href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"><span class="badge bg-warning">{{ voucher.status }}</span></a></td>
+                  <td><a {% if is_granted('ROLE_IBST_REPORT') %} href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"{% endif %}><span class="badge bg-warning">{{ voucher.status }}</span></a></td>
                 {% elseif 'rejec' in voucher.status|lower %}
-                  <td><a href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"><span class="badge bg-danger">{{ voucher.status }}</span></a></td>
+                  <td><a {% if is_granted('ROLE_IBST_REPORT') %} href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"{% endif %}><span class="badge bg-danger">{{ voucher.status }}</span></a></td>
                 {% elseif 'sent' in voucher.status|lower %}
-                  <td><a href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"><span class="badge bg-info">{{ voucher.status }}</span></a></td>
+                  <td><a {% if not is_granted('ROLE_IBST_REPORT') %} href="{{ path('app_voucher_edit', {'id': voucher.id}) }}"{% endif %}><span class="badge bg-info">{{ voucher.status }}</span></a></td>
 
 
                 {% endif %}

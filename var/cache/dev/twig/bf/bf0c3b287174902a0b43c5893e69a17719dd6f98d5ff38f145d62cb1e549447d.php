@@ -86,10 +86,9 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
                 <th>ValueLoadedOnCard</th>
                 <th>FurtherDetails</th>
                 <th>RequestedBy</th>
-                <th>RequestedBySignature</th>
                 <th>RequestedDate</th>
                 <th>AuthorizedBy</th>
-                <th>AuthorizedSignature</th>
+                <th>sentOutBy</th>
                 <th>AuthorizedDate</th>
                 <th>NewEvoucherReference</th>
                 <th>NewEvoucherDate</th>
@@ -101,105 +100,101 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
         </thead>
         <tbody>
         ";
-        // line 36
+        // line 35
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["vouchers"]) || array_key_exists("vouchers", $context) ? $context["vouchers"] : (function () { throw new RuntimeError('Variable "vouchers" does not exist.', 36, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["vouchers"]) || array_key_exists("vouchers", $context) ? $context["vouchers"] : (function () { throw new RuntimeError('Variable "vouchers" does not exist.', 35, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["voucher"]) {
-            // line 37
+            // line 36
             echo "            <tr>
                 <td>";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "id", [], "any", false, false, false, 37), "html", null, true);
+            echo "</td>
+                <td>";
             // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "id", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "reason", [], "any", false, false, false, 38), "html", null, true);
             echo "</td>
                 <td>";
             // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "reason", [], "any", false, false, false, 39), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "name", [], "any", false, false, false, 39), "html", null, true);
             echo "</td>
                 <td>";
             // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "name", [], "any", false, false, false, 40), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "idNumber", [], "any", false, false, false, 40), "html", null, true);
             echo "</td>
                 <td>";
             // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "idNumber", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "giftCardNumber", [], "any", false, false, false, 41), "html", null, true);
             echo "</td>
                 <td>";
             // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "giftCardNumber", [], "any", false, false, false, 42), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "originalIssuingStore", [], "any", false, false, false, 42), "html", null, true);
             echo "</td>
                 <td>";
             // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "originalIssuingStore", [], "any", false, false, false, 43), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "dateOfPurchase", [], "any", false, false, false, 43)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "dateOfPurchase", [], "any", false, false, false, 43), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 44
-            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "dateOfPurchase", [], "any", false, false, false, 44)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "dateOfPurchase", [], "any", false, false, false, 44), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "timeOfPurchase", [], "any", false, false, false, 44)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "timeOfPurchase", [], "any", false, false, false, 44), "H:i:s"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 45
-            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "timeOfPurchase", [], "any", false, false, false, 45)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "timeOfPurchase", [], "any", false, false, false, 45), "H:i:s"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "valueLoadedOnCard", [], "any", false, false, false, 45), "html", null, true);
             echo "</td>
                 <td>";
             // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "valueLoadedOnCard", [], "any", false, false, false, 46), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "furtherDetails", [], "any", false, false, false, 46), "html", null, true);
             echo "</td>
                 <td>";
             // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "furtherDetails", [], "any", false, false, false, 47), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedBy", [], "any", false, false, false, 47), "html", null, true);
             echo "</td>
                 <td>";
             // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedBy", [], "any", false, false, false, 48), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedDate", [], "any", false, false, false, 48)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedDate", [], "any", false, false, false, 48), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedBySignature", [], "any", false, false, false, 49), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedBy", [], "any", false, false, false, 49), "html", null, true);
             echo "</td>
                 <td>";
             // line 50
-            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedDate", [], "any", false, false, false, 50)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "requestedDate", [], "any", false, false, false, 50), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "sentOutBy", [], "any", false, false, false, 50), "html", null, true);
             echo "</td>
                 <td>";
             // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedBy", [], "any", false, false, false, 51), "html", null, true);
+            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedDate", [], "any", false, false, false, 51)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedDate", [], "any", false, false, false, 51), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedSignature", [], "any", false, false, false, 52), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "newEvoucherReference", [], "any", false, false, false, 52), "html", null, true);
             echo "</td>
                 <td>";
             // line 53
-            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedDate", [], "any", false, false, false, 53)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "authorizedDate", [], "any", false, false, false, 53), "Y-m-d"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "newEvoucherDate", [], "any", false, false, false, 53)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "newEvoucherDate", [], "any", false, false, false, 53), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
                 <td>";
             // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "newEvoucherReference", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "cardLinkedTo", [], "any", false, false, false, 54), "html", null, true);
             echo "</td>
                 <td>";
             // line 55
-            ((twig_get_attribute($this->env, $this->source, $context["voucher"], "newEvoucherDate", [], "any", false, false, false, 55)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "newEvoucherDate", [], "any", false, false, false, 55), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "deliveredTo", [], "any", false, false, false, 55), "html", null, true);
             echo "</td>
                 <td>";
             // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "cardLinkedTo", [], "any", false, false, false, 56), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 57
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "deliveredTo", [], "any", false, false, false, 57), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "status", [], "any", false, false, false, 58), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voucher"], "status", [], "any", false, false, false, 56), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 60
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voucher_show", ["id" => twig_get_attribute($this->env, $this->source, $context["voucher"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+            // line 58
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voucher_show", ["id" => twig_get_attribute($this->env, $this->source, $context["voucher"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voucher_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["voucher"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+            // line 59
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voucher_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["voucher"], "id", [], "any", false, false, false, 59)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -207,7 +202,7 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 65
+            // line 63
             echo "            <tr>
                 <td colspan=\"22\">no records found</td>
             </tr>
@@ -216,12 +211,12 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['voucher'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 67
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 72
+        // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_voucher_new");
         echo "\">Create new</a>
 ";
@@ -251,7 +246,7 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
      */
     public function getDebugInfo()
     {
-        return array (  225 => 72,  220 => 69,  211 => 65,  202 => 61,  198 => 60,  193 => 58,  189 => 57,  185 => 56,  181 => 55,  177 => 54,  173 => 53,  169 => 52,  165 => 51,  161 => 50,  157 => 49,  153 => 48,  149 => 47,  145 => 46,  141 => 45,  137 => 44,  133 => 43,  129 => 42,  125 => 41,  121 => 40,  117 => 39,  113 => 38,  110 => 37,  105 => 36,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
+        return array (  220 => 70,  215 => 67,  206 => 63,  197 => 59,  193 => 58,  188 => 56,  184 => 55,  180 => 54,  176 => 53,  172 => 52,  168 => 51,  164 => 50,  160 => 49,  156 => 48,  152 => 47,  148 => 46,  144 => 45,  140 => 44,  136 => 43,  132 => 42,  128 => 41,  124 => 40,  120 => 39,  116 => 38,  112 => 37,  109 => 36,  104 => 35,  73 => 6,  66 => 5,  53 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -277,10 +272,9 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
                 <th>ValueLoadedOnCard</th>
                 <th>FurtherDetails</th>
                 <th>RequestedBy</th>
-                <th>RequestedBySignature</th>
                 <th>RequestedDate</th>
                 <th>AuthorizedBy</th>
-                <th>AuthorizedSignature</th>
+                <th>sentOutBy</th>
                 <th>AuthorizedDate</th>
                 <th>NewEvoucherReference</th>
                 <th>NewEvoucherDate</th>
@@ -304,10 +298,9 @@ class __TwigTemplate_4ab81789f97a7ab6c42d891643c2512ed6fe0d0b07a0f5fe895cc16140b
                 <td>{{ voucher.valueLoadedOnCard }}</td>
                 <td>{{ voucher.furtherDetails }}</td>
                 <td>{{ voucher.requestedBy }}</td>
-                <td>{{ voucher.requestedBySignature }}</td>
                 <td>{{ voucher.requestedDate ? voucher.requestedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ voucher.authorizedBy }}</td>
-                <td>{{ voucher.authorizedSignature }}</td>
+                <td>{{ voucher.sentOutBy }}</td>
                 <td>{{ voucher.authorizedDate ? voucher.authorizedDate|date('Y-m-d') : '' }}</td>
                 <td>{{ voucher.newEvoucherReference }}</td>
                 <td>{{ voucher.newEvoucherDate ? voucher.newEvoucherDate|date('Y-m-d') : '' }}</td>
