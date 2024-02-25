@@ -2,7 +2,7 @@
 
 namespace App\Controller\reissuevoucher;
 
-use App\Entity\reissuevoucher\VoucherUser;
+use App\Entity\reissuevoucher\Voucher_reissueUser;
 use App\Form\reissuevoucher\RegistrationFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,7 +18,7 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
-        $user = new VoucherUser();
+        $user = new Voucher_reissueUser();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 

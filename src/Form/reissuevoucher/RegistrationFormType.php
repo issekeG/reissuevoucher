@@ -2,7 +2,7 @@
 
 namespace App\Form\reissuevoucher;
 
-use App\Entity\reissuevoucher\VoucherUser;
+use App\Entity\reissuevoucher\Voucher_reissueUser;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -52,7 +52,7 @@ class RegistrationFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => VoucherUser::class,
+            'data_class' => Voucher_reissueUser::class,
         ]);
     }
 }

@@ -2,26 +2,26 @@
 
 namespace App\Repository\reissuevoucher;
 
-use App\Entity\reissuevoucher\Voucher;
+use App\Entity\reissuevoucher\Voucher_reissue;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Voucher>
+ * @extends ServiceEntityRepository<Voucher_reissue>
  *
- * @method Voucher|null find($id, $lockMode = null, $lockVersion = null)
- * @method Voucher|null findOneBy(array $criteria, array $orderBy = null)
- * @method Voucher[]    findAll()
- * @method Voucher[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Voucher_reissue|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Voucher_reissue|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Voucher_reissue[]    findAll()
+ * @method Voucher_reissue[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class VoucherRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Voucher::class);
+        parent::__construct($registry, Voucher_reissue::class);
     }
 
-    public function add(Voucher $entity, bool $flush = false): void
+    public function add(Voucher_reissue $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class VoucherRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Voucher $entity, bool $flush = false): void
+    public function remove(Voucher_reissue $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 

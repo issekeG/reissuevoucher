@@ -20,44 +20,44 @@ voucher_app_logout:
 
 app_voucher_index:
   path: reissuevoucher/voucher
-  controller : App\Controller\reissuevoucher\VoucherController::index
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::index
   methods: [GET]
 
 
 app_voucher_new:
   path: reissuevoucher/voucher/form
-  controller : App\Controller\reissuevoucher\VoucherController::new
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::new
   methods: [GET, POST]
 
 app_voucher_search:
   path: reissuevoucher/voucher/search
-  controller : App\Controller\reissuevoucher\VoucherController::search
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::search
   methods: [GET, POST]
 
 
 app_voucher_show:
   path: reissuevoucher/voucher/{id}
-  controller : App\Controller\reissuevoucher\VoucherController::show
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::show
   methods: [GET]
 
 app_voucher_edit:
   path: reissuevoucher/voucher/{id}/edit
-  controller : App\Controller\reissuevoucher\VoucherController::edit
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::edit
   methods: [GET, POST]
 
 app_voucher_delete:
   path: reissuevoucher/voucher/{id}
-  controller : App\Controller\reissuevoucher\VoucherController::delete
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::delete
   methods: [GET, POST]
 
 voucher_update_status:
   path: reissuevoucher/voucher/update/{status}/{id}
-  controller : App\Controller\reissuevoucher\VoucherController::updateStatus
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::updateStatus
   methods: [GET, POST]
 
 voucher_dashboard_status:
   path: reissuevoucher/voucher/update/{status}
-  controller : App\Controller\reissuevoucher\VoucherController::showShoesByStatus
+  controller : App\Controller\reissuevoucher\Voucher_reissueController::showVoucherReissueByStatus
   methods: [GET, POST]
 
 

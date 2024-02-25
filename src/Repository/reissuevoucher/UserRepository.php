@@ -2,7 +2,7 @@
 
 namespace App\Repository\reissuevoucher;
 
-use App\Entity\reissuevoucher\VoucherUser;
+use App\Entity\reissuevoucher\Voucher_reissueUser;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -10,21 +10,21 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
- * @extends ServiceEntityRepository<VoucherUser>
+ * @extends ServiceEntityRepository<Voucher_reissueUser>
  *
- * @method VoucherUser|null find($id, $lockMode = null, $lockVersion = null)
- * @method VoucherUser|null findOneBy(array $criteria, array $orderBy = null)
- * @method VoucherUser[]    findAll()
- * @method VoucherUser[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Voucher_reissueUser|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Voucher_reissueUser|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Voucher_reissueUser[]    findAll()
+ * @method Voucher_reissueUser[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, VoucherUser::class);
+        parent::__construct($registry, Voucher_reissueUser::class);
     }
 
-    public function add(VoucherUser $entity, bool $flush = false): void
+    public function add(Voucher_reissueUser $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -33,7 +33,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         }
     }
 
-    public function remove(VoucherUser $entity, bool $flush = false): void
+    public function remove(Voucher_reissueUser $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -47,7 +47,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
-        if (!$user instanceof VoucherUser) {
+        if (!$user instanceof Voucher_reissueUser) {
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', \get_class($user)));
         }
 
